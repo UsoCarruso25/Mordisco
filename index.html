@@ -4,76 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>MORDISCO | Identidad de Marca</title>
+    <title>MORDISCO — El antojo empieza aquí</title>
 
     <!-- Bootstrap -->
-    <link 
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
         rel="stylesheet"
     >
 
-    <!-- Google Fonts -->
+    <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link 
-        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap" 
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap"
         rel="stylesheet"
     >
 
-    <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
 <!-- =====================================================
+     LOADER
+===================================================== -->
+
+<div class="loader">
+    <div class="loader-logo">
+        MORDISCO<span>.</span>
+    </div>
+</div>
+
+
+<!-- =====================================================
      NAVBAR
 ===================================================== -->
 
-<nav class="navbar navbar-expand-lg mordisco-nav fixed-top">
+<nav class="navbar navbar-expand-lg navbar-mordisco">
 
-    <div class="container">
+    <div class="container-fluid nav-container">
 
-        <a class="navbar-brand brand-mini" href="#inicio">
-            🍔 MORDISCO
+        <a href="#inicio" class="navbar-brand">
+            MORDISCO<span>.</span>
         </a>
 
-        <button 
-            class="navbar-toggler" 
+        <button
+            class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#mainNav"
+            data-bs-target="#menu"
         >
-            <span class="navbar-toggler-icon"></span>
+            <span></span>
+            <span></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="mainNav">
+        <div class="collapse navbar-collapse" id="menu">
 
-            <ul class="navbar-nav ms-auto">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#marca">Marca</a>
+                    <a href="#marca" class="nav-link">
+                        La marca
+                    </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#logo">Logo</a>
+                    <a href="#menu-mordisco" class="nav-link">
+                        Menú
+                    </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#colores">Colores</a>
+                    <a href="#identidad" class="nav-link">
+                        Identidad
+                    </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#tipografia">Tipografía</a>
+                    <a href="#aplicaciones" class="nav-link">
+                        Aplicaciones
+                    </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#productos">Productos</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#aplicaciones">Aplicaciones</a>
+                    <a href="#contacto" class="nav-order">
+                        VER LA MARCA →
+                    </a>
                 </li>
 
             </ul>
@@ -86,74 +103,78 @@
 
 
 <!-- =====================================================
-     01. INICIO
+     HERO
 ===================================================== -->
 
 <header id="inicio" class="hero">
 
-    <div class="hero-pattern"></div>
+    <div class="container-fluid">
 
-    <div class="container position-relative">
+        <div class="row hero-row">
 
-        <div class="row align-items-center min-vh-100">
+            <!-- TEXTO -->
 
-            <div class="col-lg-7">
+            <div class="col-lg-6 hero-text">
 
-                <span class="eyebrow">
+                <div class="hero-label reveal">
                     IDENTIDAD DE MARCA · 2026
-                </span>
+                </div>
 
-                <h1 class="hero-title">
-                    MORDISCO<span>.</span>
+                <h1 class="reveal reveal-delay-1">
+                    EL ANTOJO
+                    <br>
+                    EMPIEZA
+                    <br>
+                    <span>AQUÍ.</span>
                 </h1>
 
-                <p class="hero-slogan">
-                    EL ANTOJO EMPIEZA AQUÍ.
+                <p class="hero-description reveal reveal-delay-2">
+
+                    MORDISCO es una marca de comida rápida
+                    creada para quienes no se conforman con
+                    cualquier antojo.
+
                 </p>
 
-                <p class="hero-copy">
-                    Una identidad urbana, intensa y sabrosa creada
-                    para una marca de comida rápida que convierte
-                    cada antojo en una experiencia.
-                </p>
-
-                <a href="#marca" class="btn btn-mordisco">
-                    CONOCER LA MARCA →
+                <a
+                    href="#marca"
+                    class="hero-button reveal reveal-delay-3"
+                >
+                    DESCUBRIR MORDISCO
+                    <span>↓</span>
                 </a>
 
             </div>
 
 
-            <div class="col-lg-5">
+            <!-- IMAGEN / PRODUCTO -->
 
-                <div class="hero-burger">
+            <div class="col-lg-6 hero-image-wrapper">
 
-                    <div class="burger-glow"></div>
+                <div class="hero-image">
 
-                    <div class="burger-icon">
+                    <div class="hero-image-overlay"></div>
 
-                        <div class="bun-top">
-                            ● ●
-                        </div>
-
-                        <div class="lettuce"></div>
-
-                        <div class="cheese"></div>
-
-                        <div class="patty"></div>
-
-                        <div class="cheese"></div>
-
-                        <div class="bun-bottom"></div>
-
+                    <div class="fake-food">
+                        🍔
                     </div>
 
-                    <div class="burst burst-1">
-                        MORDISCO
+                    <div class="hero-circle">
+                        <span>
+                            SABOR
+                        </span>
+
+                        <span>
+                            ACTITUD
+                        </span>
+
+                        <span>
+                            MORDISCO
+                        </span>
                     </div>
 
-                    <div class="burst burst-2">
-                        100% SABOR
+                    <div class="hero-number">
+                        01
                     </div>
 
                 </div>
@@ -167,96 +188,108 @@
 </header>
 
 
-<main>
-
-
 <!-- =====================================================
-     02. LA MARCA
+     FRASE
 ===================================================== -->
 
-<section id="marca" class="section section-light">
+<section class="statement">
 
     <div class="container">
 
-        <div class="section-heading">
+        <div class="row">
 
-            <span>02 / LA MARCA</span>
+            <div class="col-lg-10">
 
-            <h2>
-                Una marca que <em>se siente</em>.
-            </h2>
+                <p class="statement-text reveal">
+
+                    No hacemos comida para quitar el hambre.
+                    <span>
+                        Hacemos comida para disfrutarla.
+                    </span>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MARCA
+===================================================== -->
+
+<section id="marca" class="brand-section">
+
+    <div class="container">
+
+        <div class="section-top reveal">
+
+            <span>
+                01 / LA MARCA
+            </span>
+
+            <div>
+                CONCEPTO
+            </div>
 
         </div>
 
 
-        <div class="row g-4">
+        <div class="row align-items-end">
 
-            <div class="col-lg-7">
+            <div class="col-lg-8">
 
-                <div class="brand-story">
+                <h2 class="huge-title reveal">
 
-                    <p class="lead">
+                    UNA MARCA
+                    <br>
 
-                        <strong>MORDISCO</strong> nace de una idea sencilla:
-                        cuando aparece el antojo, no hay que pensarlo demasiado.
-                        Hay que disfrutarlo.
+                    <span>CON ACTITUD.</span>
 
-                    </p>
-
-                    <p>
-
-                        La personalidad de la marca mezcla el lenguaje visual
-                        de la comida callejera con una estética contemporánea.
-
-                        El resultado es una marca directa, divertida y reconocible,
-                        diseñada para conectar con un público joven que busca
-                        sabor, rapidez y una experiencia memorable.
-
-                    </p>
-
-                </div>
+                </h2>
 
             </div>
 
+            <div class="col-lg-4">
 
-            <div class="col-lg-5">
+                <p class="brand-description reveal">
 
-                <div class="manifesto">
+                    MORDISCO nace de la combinación entre
+                    comida rápida, cultura urbana y una
+                    personalidad visual atrevida.
 
-                    <span>MANIFIESTO</span>
+                    <br><br>
+
+                    La marca busca convertir algo cotidiano
+                    como comer una hamburguesa en una
+                    experiencia reconocible y memorable.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="brand-values row g-3">
+
+            <div class="col-md-4 reveal">
+
+                <div class="value">
+
+                    <span>01</span>
 
                     <h3>
-
-                        Más sabor.<br>
-                        Más actitud.<br>
-
-                        <strong>
-                            Más MORDISCO.
-                        </strong>
-
+                        ATREVIDA
                     </h3>
 
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="row g-3 mt-4">
-
-            <div class="col-md-4">
-
-                <div class="value-card">
-
-                    <b>01</b>
-
-                    <h4>
-                        ATREVIDA
-                    </h4>
-
                     <p>
-                        Una voz directa que no pasa desapercibida.
+                        Una identidad que llama la atención
+                        y no teme destacar.
                     </p>
 
                 </div>
@@ -264,18 +297,19 @@
             </div>
 
 
-            <div class="col-md-4">
+            <div class="col-md-4 reveal">
 
-                <div class="value-card">
+                <div class="value">
 
-                    <b>02</b>
+                    <span>02</span>
 
-                    <h4>
+                    <h3>
                         CERCANA
-                    </h4>
+                    </h3>
 
                     <p>
-                        Habla como habla la gente y celebra el momento.
+                        Una comunicación sencilla,
+                        directa y fácil de recordar.
                     </p>
 
                 </div>
@@ -283,18 +317,19 @@
             </div>
 
 
-            <div class="col-md-4">
+            <div class="col-md-4 reveal">
 
-                <div class="value-card">
+                <div class="value">
 
-                    <b>03</b>
+                    <span>03</span>
 
-                    <h4>
+                    <h3>
                         SABROSA
-                    </h4>
+                    </h3>
 
                     <p>
-                        Todo lo visual debe abrir el apetito.
+                        Todo elemento visual debe transmitir
+                        sabor y provocar el antojo.
                     </p>
 
                 </div>
@@ -309,41 +344,277 @@
 
 
 <!-- =====================================================
-     03. LOGOTIPO
+     MENÚ
 ===================================================== -->
 
-<section id="logo" class="section section-dark">
+<section id="menu-mordisco" class="menu-section">
 
     <div class="container">
 
-        <div class="section-heading light">
+        <div class="section-top light reveal">
 
-            <span>03 / LOGOTIPO</span>
+            <span>
+                02 / PRODUCTOS
+            </span>
 
-            <h2>
-                El <em>mordisco</em> visual.
-            </h2>
+            <div>
+                MORDISCO MENU
+            </div>
 
         </div>
 
 
-        <div class="row align-items-center g-5">
+        <div class="row align-items-center menu-intro">
 
-            <div class="col-lg-6">
+            <div class="col-lg-7">
 
-                <div class="logo-showcase">
+                <h2 class="menu-title reveal">
 
-                    <div class="logo-burger">
+                    EL SABOR
+                    <br>
+
+                    <span>HABLA SOLO.</span>
+
+                </h2>
+
+            </div>
+
+            <div class="col-lg-5">
+
+                <p class="menu-description reveal">
+
+                    Productos diseñados para ser reconocibles,
+                    apetitosos y fáciles de asociar con la
+                    personalidad de MORDISCO.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="row g-4 products">
+
+
+            <!-- PRODUCTO 1 -->
+
+            <div class="col-md-6 col-lg-3 reveal">
+
+                <article class="product">
+
+                    <div class="product-image">
+
+                        <span class="product-emoji">
+                            🍔
+                        </span>
+
+                        <span class="product-number">
+                            01
+                        </span>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span>
+                            MORDISCO ORIGINAL
+                        </span>
+
+                        <h3>
+                            LA CLÁSICA
+                        </h3>
+
+                        <p>
+                            Carne, queso, vegetales
+                            y salsa de la casa.
+                        </p>
+
+                        <strong>
+                            $24.900
+                        </strong>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- PRODUCTO 2 -->
+
+            <div class="col-md-6 col-lg-3 reveal">
+
+                <article class="product">
+
+                    <div class="product-image red-bg">
+
+                        <span class="product-emoji">
+                            🍟
+                        </span>
+
+                        <span class="product-number">
+                            02
+                        </span>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span>
+                            ACOMPAÑAMIENTO
+                        </span>
+
+                        <h3>
+                            PAPAS
+                        </h3>
+
+                        <p>
+                            Crujientes, doradas
+                            y con salsa especial.
+                        </p>
+
+                        <strong>
+                            $12.900
+                        </strong>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- PRODUCTO 3 -->
+
+            <div class="col-md-6 col-lg-3 reveal">
+
+                <article class="product">
+
+                    <div class="product-image yellow-bg">
+
+                        <span class="product-emoji">
+                            🍗
+                        </span>
+
+                        <span class="product-number">
+                            03
+                        </span>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span>
+                            ESPECIALIDAD
+                        </span>
+
+                        <h3>
+                            ALITAS BBQ
+                        </h3>
+
+                        <p>
+                            Sabor intenso con
+                            nuestra salsa BBQ.
+                        </p>
+
+                        <strong>
+                            $22.900
+                        </strong>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- PRODUCTO 4 -->
+
+            <div class="col-md-6 col-lg-3 reveal">
+
+                <article class="product">
+
+                    <div class="product-image cream-bg">
+
+                        <span class="product-emoji">
+                            🥤
+                        </span>
+
+                        <span class="product-number">
+                            04
+                        </span>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span>
+                            BEBIDAS
+                        </span>
+
+                        <h3>
+                            REFRESCO
+                        </h3>
+
+                        <p>
+                            El complemento perfecto
+                            para el antojo.
+                        </p>
+
+                        <strong>
+                            $7.900
+                        </strong>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LOGO / IDENTIDAD
+===================================================== -->
+
+<section id="identidad" class="identity-section">
+
+    <div class="container">
+
+        <div class="section-top reveal">
+
+            <span>
+                03 / IDENTIDAD VISUAL
+            </span>
+
+            <div>
+                BRAND SYSTEM
+            </div>
+
+        </div>
+
+
+        <div class="row align-items-center identity-main">
+
+            <div class="col-lg-7">
+
+                <div class="logo-display reveal">
+
+                    <div class="logo-symbol">
                         🍔
                     </div>
 
-                    <div class="logo-word">
-                        MORDISCO
+                    <div class="logo-name">
+                        MORDISCO<span>.</span>
                     </div>
 
-                    <div class="logo-line"></div>
-
-                    <div class="logo-tag">
+                    <div class="logo-tagline">
                         EL ANTOJO EMPIEZA AQUÍ.
                     </div>
 
@@ -352,314 +623,35 @@
             </div>
 
 
-            <div class="col-lg-6">
-
-                <h3 class="sub-title">
-                    CONCEPTO
-                </h3>
-
-                <p class="dark-copy">
-
-                    El símbolo combina una hamburguesa con una mordida
-                    gráfica para representar de forma inmediata el nombre
-                    de la marca.
-
-                    Las formas curvas aportan dinamismo, mientras que el
-                    contraste amarillo, rojo y negro construye reconocimiento
-                    y energía.
-
-                </p>
-
-
-                <div class="logo-rules">
-
-                    <div>
-                        <span>✓</span>
-                        Mantener proporciones originales.
-                    </div>
-
-                    <div>
-                        <span>✓</span>
-                        Respetar el área de seguridad.
-                    </div>
-
-                    <div>
-                        <span>✓</span>
-                        Usar únicamente colores oficiales.
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="row g-3 mt-5">
-
-            <div class="col-md-4">
-
-                <div class="logo-variant color-variant">
-
-                    <div>🍔</div>
-
-                    <strong>
-                        MORDISCO
-                    </strong>
-
-                    <small>
-                        VERSIÓN PRINCIPAL
-                    </small>
-
-                </div>
-
-            </div>
-
-
-            <div class="col-md-4">
-
-                <div class="logo-variant white-variant">
-
-                    <div>🍔</div>
-
-                    <strong>
-                        MORDISCO
-                    </strong>
-
-                    <small>
-                        VERSIÓN NEGATIVA
-                    </small>
-
-                </div>
-
-            </div>
-
-
-            <div class="col-md-4">
-
-                <div class="logo-variant black-variant">
-
-                    <div>🍔</div>
-
-                    <strong>
-                        MORDISCO
-                    </strong>
-
-                    <small>
-                        VERSIÓN MONOCROMÁTICA
-                    </small>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     04. COLORES
-===================================================== -->
-
-<section id="colores" class="section section-light">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <span>04 / PALETA</span>
-
-            <h2>
-                Colores con <em>hambre</em>.
-            </h2>
-
-        </div>
-
-
-        <div class="row g-3">
-
-
-            <div class="col-md-4">
-
-                <div class="color-card yellow">
-
-                    <h3>
-                        AMARILLO
-                    </h3>
-
-                    <p>
-                        #FFC629
-                    </p>
-
-                    <small>
-                        Principal · Energía · Optimismo
-                    </small>
-
-                </div>
-
-            </div>
-
-
-            <div class="col-md-4">
-
-                <div class="color-card red">
-
-                    <h3>
-                        ROJO
-                    </h3>
-
-                    <p>
-                        #E63946
-                    </p>
-
-                    <small>
-                        Secundario · Sabor · Intensidad
-                    </small>
-
-                </div>
-
-            </div>
-
-
-            <div class="col-md-4">
-
-                <div class="color-card black">
-
-                    <h3>
-                        NEGRO
-                    </h3>
-
-                    <p>
-                        #111111
-                    </p>
-
-                    <small>
-                        Principal · Contraste · Actitud
-                    </small>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="row g-3 mt-3">
-
-            <div class="col-md-6">
-
-                <div class="support-color cream">
-
-                    <span></span>
-
-                    <div>
-
-                        <b>
-                            CREMA
-                        </b>
-
-                        <small>
-                            #F8F6EE · Fondo de apoyo
-                        </small>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="col-md-6">
-
-                <div class="support-color gray">
-
-                    <span></span>
-
-                    <div>
-
-                        <b>
-                            GRIS
-                        </b>
-
-                        <small>
-                            #6B6B6B · Texto secundario
-                        </small>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     05. TIPOGRAFÍA
-===================================================== -->
-
-<section id="tipografia" class="section section-yellow">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <span>05 / TIPOGRAFÍA</span>
-
-            <h2>
-                Una voz <em>grande</em>.
-            </h2>
-
-        </div>
-
-
-        <div class="row g-4">
-
-            <div class="col-lg-7">
-
-                <div class="type-specimen">
-
-                    <span>
-                        PRINCIPAL · BEBAS NEUE
-                    </span>
-
-                    <div class="bebas">
-                        MORDISCO
-                    </div>
-
-                    <p>
-                        ABCDEFGHIJKLM<br>
-                        NOPQRSTUVWXYZ<br>
-                        0123456789
-                    </p>
-
-                </div>
-
-            </div>
-
-
             <div class="col-lg-5">
 
-                <div class="type-specimen secondary">
+                <div class="identity-text reveal">
 
                     <span>
-                        SECUNDARIA · MONTSERRAT
+                        EL LOGOTIPO
                     </span>
 
-                    <h3>
-                        Diseño claro y contemporáneo.
-                    </h3>
+                    <h2>
+                        UNA IDENTIDAD
+                        <br>
+                        <strong>FÁCIL DE RECORDAR.</strong>
+                    </h2>
 
                     <p>
-                        Se utiliza para textos, descripciones,
-                        navegación y elementos informativos.
+
+                        El logotipo combina una tipografía
+                        contundente con un símbolo relacionado
+                        directamente con la categoría gastronómica.
+
+                    </p>
+
+                    <p>
+
+                        Su construcción está pensada para
+                        funcionar en aplicaciones digitales,
+                        empaques, redes sociales y piezas
+                        publicitarias.
+
                     </p>
 
                 </div>
@@ -668,163 +660,77 @@
 
         </div>
 
-    </div>
 
-</section>
+        <!-- COLORES -->
 
+        <div class="colors-area">
 
-<!-- =====================================================
-     06. PRODUCTOS
-===================================================== -->
-
-<section id="productos" class="section section-dark">
-
-    <div class="container">
-
-        <div class="section-heading light">
-
-            <span>
-                06 / PRODUCTOS
-            </span>
-
-            <h2>
-                El menú que <em>provoca</em>.
-            </h2>
-
-        </div>
+            <div class="row g-3">
 
 
-        <div class="row g-4">
+                <div class="col-lg-6">
 
+                    <div class="color-big yellow">
 
-            <div class="col-md-6 col-lg-3">
-
-                <article class="product-card">
-
-                    <div class="food-image">
-                        🍔
-                    </div>
-
-                    <div>
-
-                        <small>
+                        <span>
                             01
-                        </small>
+                        </span>
 
                         <h3>
-                            LA CLÁSICA
+                            MORDISCO
+                            <br>
+                            YELLOW
                         </h3>
 
-                        <p>
-                            Carne · queso · vegetales · salsa de la casa.
-                        </p>
-
-                        <b>
-                            $24.900
-                        </b>
+                        <strong>
+                            #FFC629
+                        </strong>
 
                     </div>
 
-                </article>
-
-            </div>
+                </div>
 
 
-            <div class="col-md-6 col-lg-3">
+                <div class="col-lg-3">
 
-                <article class="product-card">
+                    <div class="color-small red">
 
-                    <div class="food-image">
-                        🍟
-                    </div>
-
-                    <div>
-
-                        <small>
+                        <span>
                             02
-                        </small>
+                        </span>
 
                         <h3>
-                            PAPAS MORDISCO
+                            RED
                         </h3>
 
-                        <p>
-                            Papas crocantes con salsa especial.
-                        </p>
-
-                        <b>
-                            $12.900
-                        </b>
+                        <strong>
+                            #E63946
+                        </strong>
 
                     </div>
 
-                </article>
-
-            </div>
+                </div>
 
 
-            <div class="col-md-6 col-lg-3">
+                <div class="col-lg-3">
 
-                <article class="product-card">
+                    <div class="color-small black">
 
-                    <div class="food-image">
-                        🍗
-                    </div>
-
-                    <div>
-
-                        <small>
+                        <span>
                             03
-                        </small>
+                        </span>
 
                         <h3>
-                            ALITAS BBQ
+                            BLACK
                         </h3>
 
-                        <p>
-                            Alitas bañadas en nuestra salsa BBQ.
-                        </p>
-
-                        <b>
-                            $22.900
-                        </b>
+                        <strong>
+                            #111111
+                        </strong>
 
                     </div>
 
-                </article>
-
-            </div>
-
-
-            <div class="col-md-6 col-lg-3">
-
-                <article class="product-card">
-
-                    <div class="food-image">
-                        🥤
-                    </div>
-
-                    <div>
-
-                        <small>
-                            04
-                        </small>
-
-                        <h3>
-                            REFRESCO
-                        </h3>
-
-                        <p>
-                            Bebida fría para acompañar el antojo.
-                        </p>
-
-                        <b>
-                            $7.900
-                        </b>
-
-                    </div>
-
-                </article>
+                </div>
 
             </div>
 
@@ -836,286 +742,54 @@
 
 
 <!-- =====================================================
-     07. FOTOGRAFÍA
+     TIPOGRAFÍA
 ===================================================== -->
 
-<section id="fotografia" class="section section-light">
+<section class="type-section">
 
     <div class="container">
 
-        <div class="section-heading">
+        <div class="section-top reveal">
 
             <span>
-                07 / FOTOGRAFÍA
+                04 / TIPOGRAFÍA
             </span>
 
-            <h2>
-                Que la imagen <em>dé hambre</em>.
-            </h2>
-
-        </div>
-
-
-        <div class="row g-3">
-
-            <div class="col-md-7">
-
-                <div class="photo-panel photo-main">
-
-                    <span>
-                        PRODUCTO HERO
-                    </span>
-
-                    <strong>
-                        EL SABOR<br>
-                        HABLA SOLO.
-                    </strong>
-
-                    <div>
-                        🍔
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="col-md-5">
-
-                <div class="photo-panel photo-side">
-
-                    <span>
-                        DETALLE
-                    </span>
-
-                    <div>
-                        🍟
-                    </div>
-
-                    <p>
-                        Crocante.<br>
-                        Intenso.<br>
-                        100% MORDISCO.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="photo-guidelines mt-4">
-
             <div>
-                <b>01</b>
-                <span>
-                    Iluminación intensa y apetecible.
-                </span>
-            </div>
-
-            <div>
-                <b>02</b>
-                <span>
-                    Planos cercanos que destaquen textura.
-                </span>
-            </div>
-
-            <div>
-                <b>03</b>
-                <span>
-                    Fondos oscuros o crema con alto contraste.
-                </span>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     08. ICONOGRAFÍA
-===================================================== -->
-
-<section id="iconografia" class="section section-yellow">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <span>
-                08 / ICONOGRAFÍA
-            </span>
-
-            <h2>
-                Simple. <em>Directa.</em>
-            </h2>
-
-        </div>
-
-
-        <div class="row g-3 text-center">
-
-            <div class="col-6 col-md-3">
-                <div class="icon-card">
-                    🍔
-                    <span>Hamburguesas</span>
-                </div>
-            </div>
-
-            <div class="col-6 col-md-3">
-                <div class="icon-card">
-                    🍟
-                    <span>Papas</span>
-                </div>
-            </div>
-
-            <div class="col-6 col-md-3">
-                <div class="icon-card">
-                    🍗
-                    <span>Alitas</span>
-                </div>
-            </div>
-
-            <div class="col-6 col-md-3">
-                <div class="icon-card">
-                    🥤
-                    <span>Bebidas</span>
-                </div>
-            </div>
-
-            <div class="col-6 col-md-3">
-                <div class="icon-card">
-                    📍
-                    <span>Ubicación</span>
-                </div>
-            </div>
-
-            <div class="col-6 col-md-3">
-                <div class="icon-card">
-                    🛵
-                    <span>Domicilio</span>
-                </div>
-            </div>
-
-            <div class="col-6 col-md-3">
-                <div class="icon-card">
-                    ♡
-                    <span>Favorito</span>
-                </div>
-            </div>
-
-            <div class="col-6 col-md-3">
-                <div class="icon-card">
-                    ★
-                    <span>Calidad</span>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     09. APLICACIONES
-===================================================== -->
-
-<section id="aplicaciones" class="section section-dark">
-
-    <div class="container">
-
-        <div class="section-heading light">
-
-            <span>
-                09 / APLICACIONES
-            </span>
-
-            <h2>
-                La marca <em>sale a la calle</em>.
-            </h2>
-
-        </div>
-
-
-        <div class="row g-4">
-
-            <div class="col-md-4">
-
-                <div class="mockup box-mockup">
-
-                    <div class="mock-logo">
-                        🍔<br>
-                        <b>MORDISCO</b>
-                    </div>
-
-                    <span>
-                        EMPAQUE
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <div class="col-md-4">
-
-                <div class="mockup cup-mockup">
-
-                    <div class="mock-logo">
-                        🍔<br>
-                        <b>MORDISCO</b>
-                    </div>
-
-                    <span>
-                        VASO
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <div class="col-md-4">
-
-                <div class="mockup bag-mockup">
-
-                    <div class="mock-logo">
-                        🍔<br>
-                        <b>MORDISCO</b>
-                    </div>
-
-                    <span>
-                        BOLSA
-                    </span>
-
-                </div>
-
+                TYPOGRAPHY
             </div>
 
         </div>
 
 
-        <div class="social-card mt-5">
+        <div class="row">
 
-            <div>
+            <div class="col-lg-8">
 
-                <span>
-                    REDES SOCIALES
-                </span>
+                <h2 class="type-display reveal">
+                    MORDISCO
+                </h2>
+
+                <p class="type-name reveal">
+                    BEBAS NEUE · PRINCIPAL
+                </p>
+
+            </div>
+
+
+            <div class="col-lg-4 type-copy reveal">
 
                 <h3>
-                    @mordisco.co
+                    MONTSERRAT
                 </h3>
 
-            </div>
+                <p>
+                    Tipografía secundaria utilizada
+                    para textos, navegación,
+                    descripciones y elementos
+                    informativos.
+                </p>
 
-            <div class="social-icons">
-                ◎ &nbsp; ◉ &nbsp; ♡
             </div>
 
         </div>
@@ -1126,52 +800,176 @@
 
 
 <!-- =====================================================
-     10. USOS CORRECTOS E INCORRECTOS
+     APLICACIONES
 ===================================================== -->
 
-<section id="usos" class="section section-light">
+<section id="aplicaciones" class="applications">
 
     <div class="container">
 
-        <div class="section-heading">
+        <div class="section-top light reveal">
 
             <span>
-                10 / USOS
+                05 / APLICACIONES
             </span>
 
-            <h2>
-                Así sí. Así <em>no</em>.
-            </h2>
+            <div>
+                BRAND IN ACTION
+            </div>
+
+        </div>
+
+
+        <h2 class="applications-title reveal">
+
+            LA MARCA
+            <br>
+
+            <span>EN MOVIMIENTO.</span>
+
+        </h2>
+
+
+        <div class="row g-4 application-grid">
+
+
+            <div class="col-md-6 reveal">
+
+                <div class="application-card package">
+
+                    <div class="application-logo">
+                        🍔
+                        <br>
+                        MORDISCO
+                    </div>
+
+                    <span>
+                        PACKAGING
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 reveal">
+
+                <div class="application-card cup">
+
+                    <div class="application-logo">
+                        MORDISCO<span>.</span>
+                    </div>
+
+                    <span>
+                        BEBIDAS
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4 reveal">
+
+                <div class="application-card social">
+
+                    <div>
+                        @MORDISCO.CO
+                    </div>
+
+                    <span>
+                        SOCIAL MEDIA
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-8 reveal">
+
+                <div class="application-card poster">
+
+                    <div>
+
+                        <small>
+                            HOY ES BUEN DÍA
+                        </small>
+
+                        <h3>
+                            PARA UN
+                            <br>
+                            MORDISCO.
+                        </h3>
+
+                    </div>
+
+                    <span>
+                        PUBLICIDAD
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     USOS
+===================================================== -->
+
+<section class="usage-section">
+
+    <div class="container">
+
+        <div class="section-top reveal">
+
+            <span>
+                06 / LINEAMIENTOS
+            </span>
+
+            <div>
+                BRAND GUIDELINES
+            </div>
 
         </div>
 
 
         <div class="row g-4">
 
-            <div class="col-lg-6">
+            <div class="col-lg-6 reveal">
 
-                <div class="usage-box correct">
+                <div class="usage correct">
 
-                    <div class="usage-title">
-                        ✓ USOS CORRECTOS
+                    <div class="usage-symbol">
+                        ✓
                     </div>
+
+                    <h3>
+                        USOS CORRECTOS
+                    </h3>
 
                     <ul>
 
                         <li>
-                            Usar los colores oficiales.
+                            Mantener las proporciones originales.
                         </li>
 
                         <li>
-                            Conservar las proporciones del logo.
+                            Utilizar los colores oficiales.
                         </li>
 
                         <li>
-                            Respetar el área de seguridad.
+                            Mantener contraste adecuado.
                         </li>
 
                         <li>
-                            Garantizar contraste suficiente.
+                            Respetar el espacio de seguridad.
                         </li>
 
                     </ul>
@@ -1181,30 +979,34 @@
             </div>
 
 
-            <div class="col-lg-6">
+            <div class="col-lg-6 reveal">
 
-                <div class="usage-box incorrect">
+                <div class="usage incorrect">
 
-                    <div class="usage-title">
-                        × USOS INCORRECTOS
+                    <div class="usage-symbol">
+                        ×
                     </div>
+
+                    <h3>
+                        USOS INCORRECTOS
+                    </h3>
 
                     <ul>
 
                         <li>
-                            No deformar ni estirar el logotipo.
+                            No deformar el logotipo.
                         </li>
 
                         <li>
-                            No cambiar sus colores arbitrariamente.
+                            No cambiar sus colores.
                         </li>
 
                         <li>
-                            No agregar sombras o efectos.
+                            No agregar efectos innecesarios.
                         </li>
 
                         <li>
-                            No colocarlo sobre fondos que dificulten su lectura.
+                            No utilizar fondos que dificulten la lectura.
                         </li>
 
                     </ul>
@@ -1215,28 +1017,40 @@
 
         </div>
 
+    </div>
 
-        <div class="final-cta mt-5">
+</section>
+
+
+<!-- =====================================================
+     CONTACTO / FINAL
+===================================================== -->
+
+<section id="contacto" class="final-section">
+
+    <div class="container">
+
+        <div class="final-content reveal">
 
             <span>
                 MORDISCO
             </span>
 
-            <h3>
-                EL ANTOJO EMPIEZA AQUÍ.
-            </h3>
+            <h2>
+                EL ANTOJO
+                <br>
+                EMPIEZA AQUÍ.
+            </h2>
 
-            <p>
-                Manual de identidad visual · Concepto académico
-            </p>
+            <a href="#inicio">
+                VOLVER AL INICIO ↑
+            </a>
 
         </div>
 
     </div>
 
 </section>
-
-</main>
 
 
 <!-- =====================================================
@@ -1247,14 +1061,16 @@
 
     <div class="container">
 
-        <div class="row align-items-center gy-3">
+        <div class="row">
 
             <div class="col-md-4">
-                <strong>🍔 MORDISCO</strong>
+                <strong>
+                    MORDISCO<span>.</span>
+                </strong>
             </div>
 
             <div class="col-md-4 text-md-center">
-                Identidad de marca · 2026
+                Identidad visual · 2026
             </div>
 
             <div class="col-md-4 text-md-end">
@@ -1268,9 +1084,7 @@
 </footer>
 
 
-<!-- Bootstrap JS -->
-
-<script 
+<script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
 </script>
 

@@ -1,20 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-
     /* =====================================================
-       ANIMACIONES AL HACER SCROLL
+       SCROLL REVEAL
     ===================================================== */
 
-    const elements =
+    const revealElements =
         document.querySelectorAll(".reveal");
 
-
-    const observer =
+    const revealObserver =
         new IntersectionObserver(
 
             (entries) => {
 
-                entries.forEach(entry => {
+                entries.forEach((entry) => {
 
                     if (entry.isIntersecting) {
 
@@ -33,15 +31,15 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
 
-    elements.forEach(element => {
+    revealElements.forEach((element) => {
 
-        observer.observe(element);
+        revealObserver.observe(element);
 
     });
 
 
     /* =====================================================
-       NAVBAR DINÁMICO
+       NAVBAR AL HACER SCROLL
     ===================================================== */
 
     const navbar =
@@ -53,18 +51,12 @@ document.addEventListener("DOMContentLoaded", () => {
         if (window.scrollY > 80) {
 
             navbar.style.padding =
-                "13px 35px";
-
-            navbar.style.background =
-                "rgba(10,10,10,.97)";
+                "10px 0";
 
         } else {
 
             navbar.style.padding =
-                "22px 35px";
-
-            navbar.style.background =
-                "rgba(16,16,16,.92)";
+                "20px 0";
 
         }
 
@@ -72,11 +64,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       PARALLAX SUAVE DEL HERO
+       PARALLAX HERO
     ===================================================== */
 
-    const burger =
-        document.querySelector(".fake-food");
+    const heroPhoto =
+        document.querySelector(".hero-photo");
 
 
     window.addEventListener("scroll", () => {
@@ -86,8 +78,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (scroll < window.innerHeight) {
 
-            burger.style.transform =
-                `translateY(${scroll * 0.12}px)`;
+            heroPhoto.style.backgroundPosition =
+                `center ${50 + scroll * 0.03}%`;
 
         }
 
@@ -95,18 +87,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       CERRAR NAVBAR EN MÓVIL
+       PARALLAX FOTOGRAFÍA
     ===================================================== */
 
-    const links =
+    const photoBanner =
+        document.querySelector(".photo-banner");
+
+
+    window.addEventListener("scroll", () => {
+
+        if (!photoBanner) return;
+
+        const rect =
+            photoBanner.getBoundingClientRect();
+
+        const offset =
+            rect.top * -0.08;
+
+        photoBanner.style.backgroundPosition =
+            `center calc(50% + ${offset}px)`;
+
+    });
+
+
+    /* =====================================================
+       CERRAR MENÚ MÓVIL
+    ===================================================== */
+
+    const navLinks =
         document.querySelectorAll(".nav-link");
 
 
     const menu =
-        document.querySelector(".navbar-collapse");
+        document.querySelector("#mainMenu");
 
 
-    links.forEach(link => {
+    navLinks.forEach((link) => {
 
         link.addEventListener("click", () => {
 

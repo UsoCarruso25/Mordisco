@@ -1,13 +1,32 @@
 :root {
-
-    --black: #101010;
-    --black-2: #181818;
+    /* Colores principales - inspirados en Uber Eats pero con la identidad MORDISCO */
+    --black: #0a0a0a;
+    --black-light: #1a1a1a;
     --yellow: #ffc629;
+    --yellow-dark: #e6b000;
     --red: #e63946;
-    --cream: #f5f1e8;
+    --cream: #f7f5f0;
     --white: #ffffff;
-    --gray: #777777;
+    --gray-100: #f0f0f0;
+    --gray-200: #e0e0e0;
+    --gray-300: #c0c0c0;
+    --gray-400: #999999;
+    --gray-500: #666666;
+    --gray-600: #444444;
+    --gray-700: #2a2a2a;
 
+    /* Tipografía */
+    --font-primary: "Bebas Neue", sans-serif;
+    --font-secondary: "Montserrat", sans-serif;
+
+    /* Transiciones */
+    --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-smooth: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+
+    /* Sombras */
+    --shadow-sm: 0 2px 20px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 8px 40px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.12);
 }
 
 * {
@@ -21,15 +40,13 @@ html {
 }
 
 body {
-
     background: var(--cream);
-
     color: var(--black);
-
-    font-family: "Montserrat", sans-serif;
-
+    font-family: var(--font-secondary);
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
-
 }
 
 a {
@@ -37,45 +54,32 @@ a {
     color: inherit;
 }
 
+img {
+    max-width: 100%;
+    display: block;
+}
 
 /* =====================================================
-   LOADER
+   LOADER - Más limpio y moderno
 ===================================================== */
 
 .loader {
-
     position: fixed;
-
     inset: 0;
-
     z-index: 9999;
-
     background: var(--black);
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
-    animation:
-        loaderHide 1s ease 1.2s forwards;
-
+    animation: loaderHide 1s ease 1.5s forwards;
 }
 
 .loader-brand {
-
-    color: white;
-
-    font-family: "Bebas Neue";
-
-    font-size: 5rem;
-
-    letter-spacing: 2px;
-
-    animation:
-        loaderScale .9s ease;
-
+    color: var(--white);
+    font-family: var(--font-primary);
+    font-size: 4.5rem;
+    letter-spacing: 4px;
+    animation: loaderScale 0.8s ease forwards;
 }
 
 .loader-brand span {
@@ -83,431 +87,334 @@ a {
 }
 
 @keyframes loaderScale {
-
     from {
         opacity: 0;
-        transform: scale(.75);
+        transform: scale(0.85);
     }
-
     to {
         opacity: 1;
         transform: scale(1);
     }
-
 }
 
 @keyframes loaderHide {
-
     to {
         opacity: 0;
         visibility: hidden;
+        pointer-events: none;
     }
-
 }
 
-
 /* =====================================================
-   NAVBAR
+   NAVBAR - Inspirada en Uber Eats
 ===================================================== */
 
 .navbar-mordisco {
-
     position: fixed;
-
     top: 0;
-
     width: 100%;
-
     z-index: 1000;
+    padding: 18px 0;
+    background: rgba(10, 10, 10, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    transition: var(--transition);
+}
 
-    padding: 20px 0;
-
-    background:
-        rgba(16,16,16,.94);
-
-    backdrop-filter: blur(15px);
-
-    transition: .4s ease;
-
+.navbar-mordisco.scrolled {
+    padding: 12px 0;
+    background: rgba(10, 10, 10, 0.97);
 }
 
 .navbar-brand {
-
-    font-family: "Bebas Neue";
-
-    font-size: 2rem;
-
-    color: white !important;
-
-    letter-spacing: 1px;
-
+    font-family: var(--font-primary);
+    font-size: 1.8rem;
+    color: var(--white) !important;
+    letter-spacing: 2px;
+    transition: var(--transition);
 }
 
 .navbar-brand span {
     color: var(--yellow);
 }
 
-.nav-link {
-
-    color: rgba(255,255,255,.75) !important;
-
-    text-transform: uppercase;
-
-    font-size: .65rem;
-
-    font-weight: 800;
-
-    letter-spacing: 1px;
-
-    margin-left: 30px;
-
-    transition: .3s;
-
-}
-
-.nav-link:hover {
+.navbar-brand:hover {
     color: var(--yellow) !important;
 }
 
-.nav-button {
+.nav-link {
+    color: rgba(255, 255, 255, 0.7) !important;
+    text-transform: uppercase;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-left: 28px;
+    padding: 8px 0 !important;
+    position: relative;
+    transition: var(--transition);
+}
 
-    display: inline-block;
-
+.nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
     background: var(--yellow);
+    transition: var(--transition);
+}
 
+.nav-link:hover {
+    color: var(--white) !important;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-button {
+    display: inline-block;
+    background: var(--yellow);
     color: var(--black);
-
-    padding: 13px 20px;
-
+    padding: 12px 28px;
     border-radius: 50px;
-
     margin-left: 30px;
-
-    font-size: .65rem;
-
+    font-size: 0.6rem;
     font-weight: 800;
-
-    transition: .3s;
-
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: var(--transition);
+    border: none;
 }
 
 .nav-button:hover {
-
     background: var(--red);
-
-    color: white;
-
+    color: var(--white);
     transform: translateY(-2px);
-
+    box-shadow: 0 8px 25px rgba(230, 57, 70, 0.3);
 }
 
 .navbar-toggler {
-
     border: none;
+    padding: 8px;
+}
 
+.navbar-toggler:focus {
+    box-shadow: none;
 }
 
 .navbar-toggler span {
-
     display: block;
-
-    width: 25px;
-
+    width: 26px;
     height: 2px;
-
-    margin: 6px;
-
-    background: white;
-
+    margin: 5px 0;
+    background: var(--white);
+    transition: var(--transition);
+    border-radius: 2px;
 }
 
+.navbar-toggler[aria-expanded="true"] span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navbar-toggler[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+}
 
 /* =====================================================
-   HERO
+   HERO - Limpio y elegante
 ===================================================== */
 
 .hero {
-
     min-height: 100vh;
-
     padding-top: 80px;
-
     background: var(--black);
-
-    color: white;
-
+    color: var(--white);
+    overflow: hidden;
+    position: relative;
 }
 
 .hero-content {
-
     min-height: calc(100vh - 80px);
-
-    padding:
-        80px
-        8vw;
-
+    padding: 80px 6vw 60px;
     display: flex;
-
     justify-content: center;
-
     flex-direction: column;
-
+    position: relative;
+    z-index: 2;
 }
 
 .eyebrow {
-
     color: var(--yellow);
-
-    font-size: .65rem;
-
-    font-weight: 800;
-
-    letter-spacing: 3px;
-
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
     margin-bottom: 30px;
-
+    opacity: 0.8;
 }
 
 .hero-title {
-
-    font-family: "Bebas Neue";
-
-    font-size: clamp(5rem, 9vw, 9rem);
-
-    line-height: .82;
-
+    font-family: var(--font-primary);
+    font-size: clamp(4.5rem, 10vw, 9rem);
+    line-height: 0.82;
     letter-spacing: 2px;
-
 }
 
 .hero-title span {
     color: var(--yellow);
+    display: inline-block;
 }
 
 .hero-copy {
-
-    max-width: 460px;
-
+    max-width: 440px;
     margin-top: 35px;
-
-    color: #a7a7a7;
-
-    font-size: .85rem;
-
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85rem;
     line-height: 1.9;
-
+    font-weight: 400;
 }
 
 .main-button {
-
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
     width: fit-content;
-
-    margin-top: 30px;
-
-    padding: 16px 22px;
-
+    margin-top: 35px;
+    padding: 16px 28px;
     border-radius: 50px;
-
     background: var(--yellow);
-
     color: var(--black);
-
-    font-size: .65rem;
-
+    font-size: 0.6rem;
     font-weight: 800;
-
-    transition: .4s;
-
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
 }
 
 .main-button span {
-    margin-left: 25px;
+    transition: var(--transition);
+    display: inline-block;
 }
 
 .main-button:hover {
-
     background: var(--red);
-
-    color: white;
-
-    transform: translateY(-5px);
-
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(230, 57, 70, 0.3);
 }
 
+.main-button:hover span {
+    transform: translateX(6px);
+}
 
-/* HERO FOTO */
-
+/* Hero Photo */
 .hero-photo {
-
     min-height: calc(100vh - 80px);
-
     position: relative;
-
-    background-image:
-        url("https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1400&q=90");
-
+    background-image: url("https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1400&q=90");
     background-size: cover;
-
     background-position: center;
-
     overflow: hidden;
-
 }
 
 .hero-photo::after {
-
     content: "";
-
     position: absolute;
-
     inset: 0;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(0,0,0,.1),
-            rgba(0,0,0,.45)
-        );
-
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5));
 }
 
 .photo-label {
-
     position: absolute;
-
     top: 30px;
-
     left: 35px;
-
     z-index: 2;
-
-    color: white;
-
-    font-size: .65rem;
-
-    font-weight: 800;
-
-    letter-spacing: 2px;
-
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 3px;
 }
 
 .hero-round {
-
     position: absolute;
-
     z-index: 3;
-
-    right: 45px;
-
-    bottom: 45px;
-
-    width: 175px;
-
-    height: 175px;
-
+    right: 40px;
+    bottom: 40px;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
-
     background: var(--yellow);
-
     color: var(--black);
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     flex-direction: column;
-
     text-align: center;
-
-    font-family: "Bebas Neue";
-
-    font-size: 1.5rem;
-
-    line-height: 1;
-
-    transform: rotate(-8deg);
-
-    box-shadow:
-        12px 12px 0 var(--red);
-
-    animation:
-        roundFloat 4s ease-in-out infinite;
-
+    font-family: var(--font-primary);
+    font-size: 1.3rem;
+    line-height: 1.1;
+    transform: rotate(-6deg);
+    box-shadow: 15px 15px 0 var(--red);
+    animation: roundFloat 4s ease-in-out infinite;
 }
 
 @keyframes roundFloat {
-
-    0%,100% {
-        transform: rotate(-8deg) translateY(0);
+    0%,
+    100% {
+        transform: rotate(-6deg) translateY(0);
     }
-
     50% {
-        transform: rotate(-5deg) translateY(-10px);
+        transform: rotate(-3deg) translateY(-12px);
     }
-
 }
 
-
 /* =====================================================
-   STATEMENT
+   STATEMENT - Más limpio
 ===================================================== */
 
 .statement {
-
-    padding: 130px 0;
-
+    padding: 120px 0;
     background: var(--yellow);
-
 }
 
 .statement-title {
-
-    font-family: "Bebas Neue";
-
-    font-size: clamp(4rem, 8vw, 8rem);
-
-    line-height: .85;
-
+    font-family: var(--font-primary);
+    font-size: clamp(3.5rem, 8vw, 7.5rem);
+    line-height: 0.85;
+    letter-spacing: 1px;
 }
 
 .statement-title span {
     color: var(--red);
+    display: block;
 }
 
-
 /* =====================================================
-   GENERALES
+   SECCIONES - Generales
 ===================================================== */
 
 .brand-section,
 .guidelines-section {
-
-    padding: 130px 0;
-
+    padding: 120px 0;
     background: var(--cream);
-
 }
 
 .section-header {
-
     display: flex;
-
     justify-content: space-between;
-
-    border-bottom: 1px solid #d2cec3;
-
-    padding-bottom: 20px;
-
+    align-items: center;
+    border-bottom: 1px solid var(--gray-200);
+    padding-bottom: 18px;
     margin-bottom: 70px;
-
-    font-size: .65rem;
-
-    font-weight: 800;
-
+    font-size: 0.6rem;
+    font-weight: 700;
     letter-spacing: 2px;
-
+    text-transform: uppercase;
 }
 
 .section-header span {
@@ -515,12 +422,12 @@ a {
 }
 
 .section-header small {
-    color: #888;
-    letter-spacing: 1px;
+    color: var(--gray-400);
+    letter-spacing: 1.5px;
 }
 
 .section-header.dark {
-    border-color: #333;
+    border-color: rgba(255, 255, 255, 0.08);
 }
 
 .section-header.dark span {
@@ -528,11 +435,11 @@ a {
 }
 
 .section-header.dark small {
-    color: #666;
+    color: var(--gray-400);
 }
 
 .section-header.light {
-    border-color: #333;
+    border-color: rgba(255, 255, 255, 0.08);
 }
 
 .section-header.light span {
@@ -540,22 +447,18 @@ a {
 }
 
 .section-header.light small {
-    color: #666;
+    color: var(--gray-400);
 }
 
-
 /* =====================================================
-   MARCA
+   MARCA - Más refinado
 ===================================================== */
 
 .massive-title {
-
-    font-family: "Bebas Neue";
-
-    font-size: clamp(5rem, 9vw, 9rem);
-
-    line-height: .8;
-
+    font-family: var(--font-primary);
+    font-size: clamp(4.5rem, 10vw, 9rem);
+    line-height: 0.8;
+    letter-spacing: 1px;
 }
 
 .massive-title span {
@@ -563,122 +466,90 @@ a {
 }
 
 .body-text {
-
     max-width: 390px;
-
-    color: #666;
-
-    font-size: .82rem;
-
+    color: var(--gray-500);
+    font-size: 0.82rem;
     line-height: 1.9;
-
 }
 
 .values-row {
-    margin-top: 110px;
+    margin-top: 100px;
 }
 
 .value-box {
+    border-top: 3px solid var(--black);
+    padding-top: 28px;
+    transition: var(--transition);
+}
 
-    border-top: 4px solid var(--black);
-
-    padding-top: 25px;
-
+.value-box:hover {
+    transform: translateY(-4px);
 }
 
 .value-box span {
-
-    font-family: "Bebas Neue";
-
+    font-family: var(--font-primary);
     color: var(--red);
-
-    font-size: 1.5rem;
-
+    font-size: 1.6rem;
+    opacity: 0.6;
 }
 
 .value-box h3 {
-
-    font-family: "Bebas Neue";
-
-    font-size: 2.5rem;
-
-    margin: 15px 0 5px;
-
+    font-family: var(--font-primary);
+    font-size: 2.2rem;
+    margin: 12px 0 6px;
+    letter-spacing: 1px;
 }
 
 .value-box p {
-
-    max-width: 290px;
-
-    color: #777;
-
-    font-size: .75rem;
-
-    line-height: 1.7;
-
+    max-width: 280px;
+    color: var(--gray-400);
+    font-size: 0.75rem;
+    line-height: 1.8;
 }
 
-
 /* =====================================================
-   BRANDING
+   BRANDING - Limpio y moderno
 ===================================================== */
 
 .branding-section {
-
-    padding: 130px 0;
-
+    padding: 120px 0;
     background: var(--black);
-
-    color: white;
-
+    color: var(--white);
 }
 
 .branding-grid {
-
     background: var(--cream);
-
     color: var(--black);
-
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
 }
 
 .branding-logo {
-
-    min-height: 550px;
-
+    min-height: 500px;
     background: var(--yellow);
-
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
-
     justify-content: center;
-
     text-align: center;
-
+    padding: 40px;
 }
 
 .logo-small {
-
-    font-size: .6rem;
-
-    font-weight: 800;
-
-    letter-spacing: 3px;
-
+    font-size: 0.55rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
     margin-bottom: 30px;
-
+    opacity: 0.6;
 }
 
 .logo-big {
-
-    font-family: "Bebas Neue";
-
-    font-size: clamp(5rem, 9vw, 9rem);
-
-    line-height: .8;
-
+    font-family: var(--font-primary);
+    font-size: clamp(5rem, 10vw, 9rem);
+    line-height: 0.8;
+    letter-spacing: 2px;
 }
 
 .logo-big span {
@@ -686,63 +557,43 @@ a {
 }
 
 .logo-line {
-
-    width: 80px;
-
-    height: 4px;
-
-    margin: 30px 0 15px;
-
+    width: 70px;
+    height: 3px;
+    margin: 30px 0 18px;
     background: var(--red);
-
+    border-radius: 2px;
 }
 
 .branding-logo p {
-
-    font-size: .6rem;
-
-    letter-spacing: 4px;
-
-    font-weight: 800;
-
+    font-size: 0.55rem;
+    letter-spacing: 5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    opacity: 0.7;
 }
 
 .branding-info {
-
     height: 100%;
-
-    padding: 60px 45px;
-
+    padding: 60px 50px;
     display: flex;
-
     justify-content: center;
-
     flex-direction: column;
-
 }
 
 .branding-info > span {
-
     color: var(--red);
-
-    font-size: .6rem;
-
-    font-weight: 800;
-
-    letter-spacing: 2px;
-
+    font-size: 0.55rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
 .branding-info h3 {
-
-    font-family: "Bebas Neue";
-
-    font-size: 3rem;
-
-    line-height: .9;
-
-    margin: 20px 0;
-
+    font-family: var(--font-primary);
+    font-size: 2.8rem;
+    line-height: 0.9;
+    margin: 18px 0 20px;
+    letter-spacing: 1px;
 }
 
 .branding-info strong {
@@ -750,50 +601,39 @@ a {
 }
 
 .branding-info p {
-
-    color: #666;
-
-    font-size: .75rem;
-
-    line-height: 1.8;
-
+    color: var(--gray-500);
+    font-size: 0.75rem;
+    line-height: 1.9;
+    max-width: 380px;
 }
 
+.branding-info p+p {
+    margin-top: 10px;
+}
 
 /* =====================================================
-   PALETA
+   PALETA DE COLORES
 ===================================================== */
 
 .palette-title {
-
-    margin-top: 120px;
-
-    margin-bottom: 45px;
-
+    margin-top: 110px;
+    margin-bottom: 40px;
 }
 
 .palette-title span {
-
     color: var(--yellow);
-
-    font-size: .65rem;
-
-    font-weight: 800;
-
-    letter-spacing: 2px;
-
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
 .palette-title h2 {
-
-    font-family: "Bebas Neue";
-
-    font-size: 5rem;
-
-    line-height: .8;
-
+    font-family: var(--font-primary);
+    font-size: 4.5rem;
+    line-height: 0.8;
     margin-top: 15px;
-
+    letter-spacing: 1px;
 }
 
 .palette-title strong {
@@ -801,182 +641,126 @@ a {
 }
 
 .color-card {
-
-    min-height: 320px;
-
-    padding: 30px;
-
+    min-height: 280px;
+    padding: 30px 35px;
     display: flex;
-
     flex-direction: column;
-
     justify-content: space-between;
+    border-radius: 12px;
+    transition: var(--transition);
+}
 
+.color-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
 }
 
 .color-card > span {
-
-    font-family: "Bebas Neue";
-
-    font-size: 1.5rem;
-
-    opacity: .5;
-
+    font-family: var(--font-primary);
+    font-size: 1.4rem;
+    opacity: 0.4;
 }
 
 .color-card h3 {
-
-    font-family: "Bebas Neue";
-
-    font-size: 2.5rem;
-
-    line-height: .9;
-
+    font-family: var(--font-primary);
+    font-size: 2rem;
+    line-height: 0.9;
     margin: 0;
-
+    letter-spacing: 1px;
 }
 
 .color-card strong {
-
     display: block;
-
-    margin-top: 10px;
-
-    font-size: .7rem;
-
+    margin-top: 8px;
+    font-size: 0.65rem;
     letter-spacing: 2px;
-
+    font-weight: 600;
 }
 
 .color-yellow {
-
     background: var(--yellow);
-
     color: var(--black);
-
 }
 
 .color-red {
-
     background: var(--red);
-
-    color: white;
-
+    color: var(--white);
 }
 
 .color-black {
-
     background: #050505;
-
-    color: white;
-
+    color: var(--white);
 }
 
-
 /* =====================================================
-   TYPOGRAPHY
+   TIPOGRAFÍA
 ===================================================== */
 
 .typography-brand {
-
-    margin-top: 130px;
-
+    margin-top: 120px;
     padding-top: 70px;
-
-    border-top: 1px solid #333;
-
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .mini-label,
 .secondary-type > span {
-
     color: var(--yellow);
-
-    font-size: .6rem;
-
-    font-weight: 800;
-
-    letter-spacing: 2px;
-
+    font-size: 0.55rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
 .type-big {
-
-    font-family: "Bebas Neue";
-
-    font-size: clamp(6rem, 14vw, 14rem);
-
-    line-height: .7;
-
-    margin-top: 30px;
-
+    font-family: var(--font-primary);
+    font-size: clamp(6rem, 15vw, 14rem);
+    line-height: 0.7;
+    margin-top: 25px;
+    letter-spacing: 4px;
 }
 
 .type-font {
-
-    font-size: .65rem;
-
-    letter-spacing: 3px;
-
-    margin-top: 35px;
-
-    color: #888;
-
+    font-size: 0.6rem;
+    letter-spacing: 4px;
+    margin-top: 30px;
+    color: var(--gray-400);
+    text-transform: uppercase;
 }
 
 .secondary-type {
-
-    padding-left: 30px;
-
+    padding-left: 40px;
 }
 
 .secondary-type h3 {
-
-    font-family: "Montserrat";
-
+    font-family: var(--font-secondary);
     font-weight: 800;
-
-    font-size: 2rem;
-
-    margin: 20px 0;
-
+    font-size: 1.8rem;
+    margin: 18px 0 12px;
+    letter-spacing: -0.5px;
 }
 
 .secondary-type p {
-
     max-width: 300px;
-
-    color: #888;
-
-    font-size: .75rem;
-
+    color: var(--gray-400);
+    font-size: 0.75rem;
     line-height: 1.8;
-
 }
-
 
 /* =====================================================
    PRODUCTOS
 ===================================================== */
 
 .products-section {
-
-    padding: 130px 0;
-
+    padding: 120px 0;
     background: var(--black);
-
-    color: white;
-
+    color: var(--white);
 }
 
 .products-title {
-
-    font-family: "Bebas Neue";
-
-    font-size: clamp(5rem, 9vw, 9rem);
-
-    line-height: .8;
-
+    font-family: var(--font-primary);
+    font-size: clamp(4.5rem, 10vw, 9rem);
+    line-height: 0.8;
+    letter-spacing: 1px;
 }
 
 .products-title span {
@@ -984,242 +768,149 @@ a {
 }
 
 .product-copy {
-
     max-width: 360px;
-
-    color: #888;
-
-    font-size: .8rem;
-
-    line-height: 1.8;
-
+    color: var(--gray-400);
+    font-size: 0.8rem;
+    line-height: 1.9;
 }
 
 .product-intro {
-
-    margin-bottom: 80px;
-
+    margin-bottom: 70px;
 }
 
 .product-card {
-
-    background: #191919;
-
-    height: 100%;
-
+    background: var(--black-light);
+    border-radius: 14px;
     overflow: hidden;
-
-    transition: .5s cubic-bezier(.2,.8,.2,1);
-
+    height: 100%;
+    transition: var(--transition-smooth);
+    border: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 .product-card:hover {
-
     transform: translateY(-12px);
-
+    border-color: rgba(255, 198, 41, 0.15);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
 }
 
 .product-photo {
-
-    height: 350px;
-
+    height: 320px;
     position: relative;
-
     background-size: cover;
-
     background-position: center;
-
-    transition: transform .7s ease;
-
+    transition: transform 0.7s ease;
 }
 
 .product-card:hover .product-photo {
-
-    transform: scale(1.05);
-
+    transform: scale(1.04);
 }
 
 .product-photo::after {
-
     content: "";
-
     position: absolute;
-
     inset: 0;
-
-    background:
-        linear-gradient(
-            transparent 50%,
-            rgba(0,0,0,.4)
-        );
-
+    background: linear-gradient(transparent 50%, rgba(0, 0, 0, 0.5));
 }
 
 .product-photo span {
-
     position: absolute;
-
     top: 20px;
-
-    right: 20px;
-
+    right: 22px;
     z-index: 2;
-
-    font-family: "Bebas Neue";
-
-    font-size: 1.5rem;
-
+    font-family: var(--font-primary);
+    font-size: 1.4rem;
+    opacity: 0.5;
 }
 
 .burger-photo {
-
-    background-image:
-        url("https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85");
-
+    background-image: url("https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85");
 }
 
 .fries-photo {
-
-    background-image:
-        url("https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=900&q=85");
-
+    background-image: url("https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=900&q=85");
 }
 
 .wings-photo {
-
-    background-image:
-        url("https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=900&q=85");
-
+    background-image: url("https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=900&q=85");
 }
 
 .drink-photo {
-
-    background-image:
-        url("https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=85");
-
+    background-image: url("https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=85");
 }
 
 .product-content {
-
-    padding: 25px;
-
+    padding: 24px 25px 28px;
 }
 
 .product-content small {
-
     color: var(--yellow);
-
-    font-size: .55rem;
-
-    font-weight: 800;
-
-    letter-spacing: 2px;
-
+    font-size: 0.5rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
 }
 
 .product-content h3 {
-
-    font-family: "Bebas Neue";
-
-    font-size: 2.2rem;
-
-    margin: 8px 0;
-
+    font-family: var(--font-primary);
+    font-size: 2rem;
+    margin: 6px 0 4px;
+    letter-spacing: 0.5px;
 }
 
 .product-content p {
-
-    color: #777;
-
-    font-size: .7rem;
-
+    color: var(--gray-400);
+    font-size: 0.7rem;
     line-height: 1.7;
-
+    margin: 0;
 }
 
-
 /* =====================================================
-   FOTOGRAFÍA
+   FOTOGRAFÍA - Banner
 ===================================================== */
 
 .photography-section {
-
-    background: var(--yellow);
-
+    background: var(--black);
 }
 
 .photo-banner {
-
-    min-height: 750px;
-
+    min-height: 700px;
     position: relative;
-
-    background-image:
-        url("https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=2000&q=90");
-
+    background-image: url("https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=2000&q=90");
     background-size: cover;
-
     background-position: center;
-
     display: flex;
-
     align-items: center;
-
 }
 
 .photo-banner::after {
-
     content: "";
-
     position: absolute;
-
     inset: 0;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(0,0,0,.8),
-            rgba(0,0,0,.05)
-        );
-
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1));
 }
 
 .photo-banner-content {
-
     position: relative;
-
     z-index: 2;
-
-    color: white;
-
-    padding-left: 10vw;
-
-    max-width: 650px;
-
+    color: var(--white);
+    padding-left: 8vw;
+    max-width: 600px;
 }
 
 .photo-banner-content > span {
-
     color: var(--yellow);
-
-    font-size: .65rem;
-
-    font-weight: 800;
-
+    font-size: 0.6rem;
+    font-weight: 700;
     letter-spacing: 3px;
-
+    text-transform: uppercase;
 }
 
 .photo-banner-content h2 {
-
-    font-family: "Bebas Neue";
-
-    font-size: clamp(5rem, 9vw, 9rem);
-
-    line-height: .8;
-
-    margin: 25px 0;
-
+    font-family: var(--font-primary);
+    font-size: clamp(4.5rem, 10vw, 9rem);
+    line-height: 0.8;
+    margin: 25px 0 20px;
+    letter-spacing: 1px;
 }
 
 .photo-banner-content strong {
@@ -1227,40 +918,27 @@ a {
 }
 
 .photo-banner-content p {
-
-    color: #ddd;
-
+    color: rgba(255, 255, 255, 0.7);
     max-width: 350px;
-
-    font-size: .8rem;
-
-    line-height: 1.8;
-
+    font-size: 0.8rem;
+    line-height: 1.9;
 }
-
 
 /* =====================================================
    APLICACIONES
 ===================================================== */
 
 .applications-section {
-
-    padding: 130px 0;
-
+    padding: 120px 0;
     background: var(--cream);
-
 }
 
 .applications-title {
-
-    font-family: "Bebas Neue";
-
-    font-size: clamp(5rem, 9vw, 9rem);
-
-    line-height: .8;
-
-    margin-bottom: 80px;
-
+    font-family: var(--font-primary);
+    font-size: clamp(4.5rem, 10vw, 9rem);
+    line-height: 0.8;
+    margin-bottom: 70px;
+    letter-spacing: 1px;
 }
 
 .applications-title span {
@@ -1268,91 +946,60 @@ a {
 }
 
 .application {
-
-    min-height: 430px;
-
+    min-height: 400px;
     position: relative;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     overflow: hidden;
-
-    transition: .5s;
-
+    border-radius: 14px;
+    transition: var(--transition-smooth);
+    cursor: pointer;
 }
 
 .application:hover {
-    transform: translateY(-8px);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
 }
 
 .application label {
-
     position: absolute;
-
-    bottom: 20px;
-
-    left: 25px;
-
-    font-size: .6rem;
-
-    font-weight: 800;
-
-    letter-spacing: 2px;
-
+    bottom: 22px;
+    left: 28px;
+    font-size: 0.55rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    opacity: 0.6;
 }
 
-
-/* PACKAGING */
-
+/* Packaging */
 .packaging {
-
     background: var(--yellow);
-
 }
 
 .pack-box {
-
-    width: 230px;
-
-    height: 280px;
-
+    width: 200px;
+    height: 260px;
     background: var(--black);
-
-    color: white;
-
+    color: var(--white);
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     flex-direction: column;
-
-    box-shadow:
-        20px 20px 0 var(--red);
-
-    transition: .5s;
-
+    border-radius: 12px;
+    box-shadow: 18px 18px 0 var(--red);
+    transition: var(--transition-smooth);
 }
 
 .application:hover .pack-box {
-
-    transform:
-        rotate(-4deg)
-        translateY(-10px);
-
+    transform: rotate(-4deg) translateY(-8px);
 }
 
 .pack-box div {
-
-    font-family: "Bebas Neue";
-
-    font-size: 2.5rem;
-
+    font-family: var(--font-primary);
+    font-size: 2.2rem;
+    letter-spacing: 2px;
 }
 
 .pack-box div span {
@@ -1360,120 +1007,82 @@ a {
 }
 
 .pack-box small {
-
-    color: #888;
-
-    margin-top: 10px;
-
-    font-size: .5rem;
-
+    color: var(--gray-400);
+    margin-top: 8px;
+    font-size: 0.5rem;
     letter-spacing: 2px;
-
+    text-transform: uppercase;
 }
 
-
-/* CUP */
-
+/* Cup */
 .cup {
-
     background: var(--red);
-
-    color: white;
-
+    color: var(--white);
 }
 
 .cup-brand {
-
-    font-family: "Bebas Neue";
-
-    font-size: 6rem;
-
-    transform: rotate(-8deg);
-
+    font-family: var(--font-primary);
+    font-size: 5.5rem;
+    transform: rotate(-6deg);
+    letter-spacing: 3px;
 }
 
 .cup-brand span {
     color: var(--yellow);
 }
 
-
-/* SOCIAL */
-
+/* Social */
 .social {
-
-    min-height: 300px;
-
+    min-height: 280px;
     background: var(--black);
-
     color: var(--yellow);
-
-    font-family: "Bebas Neue";
-
-    font-size: 3rem;
-
+    font-family: var(--font-primary);
+    font-size: 2.8rem;
+    letter-spacing: 2px;
 }
 
-
-/* POSTER */
-
+/* Poster */
 .poster {
-
-    min-height: 300px;
-
-    padding: 60px;
-
+    min-height: 280px;
+    padding: 50px 55px;
     justify-content: flex-start;
-
     align-items: flex-start;
-
-    background:
-        linear-gradient(
-            135deg,
-            #242424,
-            #0b0b0b
-        );
-
-    color: white;
-
+    background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
+    color: var(--white);
 }
 
 .poster small {
-
     color: var(--yellow);
-
-    font-size: .6rem;
-
+    font-size: 0.55rem;
     letter-spacing: 2px;
-
+    text-transform: uppercase;
 }
 
 .poster h3 {
-
-    font-family: "Bebas Neue";
-
-    font-size: 4rem;
-
-    line-height: .8;
-
-    margin-top: 15px;
-
+    font-family: var(--font-primary);
+    font-size: 3.5rem;
+    line-height: 0.8;
+    margin-top: 12px;
+    letter-spacing: 1px;
 }
-
 
 /* =====================================================
    GUIDELINES
 ===================================================== */
 
 .guideline {
+    min-height: 350px;
+    padding: 40px 45px;
+    background: var(--white);
+    border-radius: 14px;
+    border-top: 4px solid;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
 
-    min-height: 380px;
-
-    padding: 45px;
-
-    background: white;
-
-    border-top: 5px solid;
-
+.guideline:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
 }
 
 .guideline.correct {
@@ -1485,171 +1094,132 @@ a {
 }
 
 .guideline-number {
-
-    font-family: "Bebas Neue";
-
-    font-size: 2rem;
-
-    color: #999;
-
+    font-family: var(--font-primary);
+    font-size: 1.8rem;
+    color: var(--gray-300);
 }
 
 .guideline h3 {
-
-    font-family: "Bebas Neue";
-
-    font-size: 3rem;
-
-    margin: 20px 0;
-
+    font-family: var(--font-primary);
+    font-size: 2.8rem;
+    margin: 16px 0 20px;
+    letter-spacing: 1px;
 }
 
 .guideline ul {
-
     padding-left: 20px;
-
-    color: #666;
-
-    font-size: .75rem;
-
-    line-height: 2.2;
-
+    color: var(--gray-500);
+    font-size: 0.75rem;
+    line-height: 2.3;
+    list-style-type: none;
 }
 
+.guideline ul li {
+    position: relative;
+    padding-left: 20px;
+}
+
+.guideline ul li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--gray-300);
+}
+
+.guideline.correct ul li::before {
+    color: #1c9b50;
+}
+
+.guideline.incorrect ul li::before {
+    color: var(--red);
+}
 
 /* =====================================================
-   FINAL
+   FINAL SECTION
 ===================================================== */
 
 .final-section {
-
-    min-height: 90vh;
-
+    min-height: 85vh;
     position: relative;
-
     overflow: hidden;
-
     display: flex;
-
     align-items: center;
-
     text-align: center;
-
-    color: white;
-
+    color: var(--white);
 }
 
 .final-photo {
-
     position: absolute;
-
     inset: 0;
-
-    background-image:
-        url("https://images.unsplash.com/photo-1550317138-10000687a72b?auto=format&fit=crop&w=2000&q=90");
-
+    background-image: url("https://images.unsplash.com/photo-1550317138-10000687a72b?auto=format&fit=crop&w=2000&q=90");
     background-size: cover;
-
     background-position: center;
-
     transform: scale(1.05);
-
 }
 
 .final-overlay {
-
     position: absolute;
-
     inset: 0;
-
-    background:
-        rgba(0,0,0,.72);
-
+    background: rgba(0, 0, 0, 0.7);
 }
 
 .final-content {
-
     position: relative;
-
     z-index: 2;
-
+    padding: 40px 20px;
 }
 
 .final-content > span {
-
     color: var(--yellow);
-
-    font-family: "Bebas Neue";
-
-    font-size: 3rem;
-
+    font-family: var(--font-primary);
+    font-size: 2.8rem;
+    letter-spacing: 4px;
 }
 
 .final-content h2 {
-
-    font-family: "Bebas Neue";
-
-    font-size: clamp(5rem, 11vw, 11rem);
-
-    line-height: .75;
-
+    font-family: var(--font-primary);
+    font-size: clamp(4.5rem, 12vw, 11rem);
+    line-height: 0.75;
     margin: 25px 0 50px;
-
+    letter-spacing: 2px;
 }
 
 .final-content a {
-
     display: inline-block;
-
-    padding: 16px 25px;
-
+    padding: 16px 32px;
     background: var(--yellow);
-
     color: var(--black);
-
     border-radius: 50px;
-
-    font-size: .65rem;
-
+    font-size: 0.6rem;
     font-weight: 800;
-
-    transition: .3s;
-
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: var(--transition);
 }
 
 .final-content a:hover {
-
     background: var(--red);
-
-    color: white;
-
+    color: var(--white);
     transform: translateY(-4px);
-
+    box-shadow: 0 12px 35px rgba(230, 57, 70, 0.3);
 }
-
 
 /* =====================================================
    FOOTER
 ===================================================== */
 
 footer {
-
-    padding: 30px 0;
-
+    padding: 28px 0;
     background: #080808;
-
-    color: #777;
-
+    color: var(--gray-400);
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 .footer-logo {
-
-    color: white;
-
-    font-family: "Bebas Neue";
-
-    font-size: 1.7rem;
-
+    color: var(--white);
+    font-family: var(--font-primary);
+    font-size: 1.6rem;
+    letter-spacing: 2px;
 }
 
 .footer-logo span {
@@ -1657,180 +1227,313 @@ footer {
 }
 
 footer small {
-
-    font-size: .55rem;
-
-    letter-spacing: 1px;
-
+    font-size: 0.5rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
 }
 
-
 /* =====================================================
-   SCROLL REVEAL
+   SCROLL REVEAL - Mejorado
 ===================================================== */
 
 .reveal {
-
     opacity: 0;
-
-    transform: translateY(55px);
-
-    transition:
-        opacity .9s ease,
-        transform 1s cubic-bezier(.2,.8,.2,1);
-
+    transform: translateY(60px);
+    transition: opacity 0.9s ease, transform 1s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .reveal.active {
-
     opacity: 1;
-
     transform: translateY(0);
-
 }
 
 .delay-1 {
-    transition-delay: .15s;
+    transition-delay: 0.15s;
 }
 
 .delay-2 {
-    transition-delay: .3s;
+    transition-delay: 0.3s;
 }
 
 .delay-3 {
-    transition-delay: .45s;
+    transition-delay: 0.45s;
 }
-
 
 /* =====================================================
    RESPONSIVE
 ===================================================== */
 
 @media (max-width: 991px) {
-
     .navbar-mordisco {
-        padding: 15px 0;
+        padding: 14px 0;
     }
 
     .nav-link {
-        margin: 12px 0;
+        margin: 10px 0;
+        font-size: 0.7rem;
     }
 
     .nav-button {
-        margin: 10px 0;
+        margin: 12px 0;
+        text-align: center;
+        display: inline-block;
     }
 
     .hero-content {
-
-        min-height: 700px;
-
-        padding: 100px 30px 70px;
-
+        min-height: 600px;
+        padding: 100px 30px 60px;
     }
 
     .hero-photo {
-
-        min-height: 650px;
-
+        min-height: 550px;
     }
 
     .branding-info {
-
-        min-height: 400px;
-
+        min-height: 350px;
+        padding: 45px 35px;
     }
 
     .secondary-type {
-
         padding-left: 0;
-
         margin-top: 50px;
-
     }
 
     .photo-banner-content {
-
         padding-left: 30px;
-
+        padding-right: 30px;
     }
 
+    .photo-banner {
+        min-height: 550px;
+    }
 }
 
-
-@media (max-width: 575px) {
-
-    .hero-title {
-
-        font-size: 5rem;
-
+@media (max-width: 767px) {
+    .hero-content {
+        min-height: 500px;
+        padding: 90px 25px 50px;
     }
 
     .hero-photo {
-
-        min-height: 500px;
-
+        min-height: 450px;
     }
 
     .hero-round {
-
-        width: 130px;
-
-        height: 130px;
-
-        font-size: 1.1rem;
-
+        width: 120px;
+        height: 120px;
+        font-size: 1rem;
         right: 20px;
-
-        bottom: 25px;
-
+        bottom: 20px;
     }
 
-    .statement-title {
-
-        font-size: 4rem;
-
+    .hero-round {
+        box-shadow: 10px 10px 0 var(--red);
     }
 
-    .massive-title {
+    .statement {
+        padding: 80px 0;
+    }
 
-        font-size: 4.7rem;
+    .brand-section,
+    .branding-section,
+    .products-section,
+    .applications-section,
+    .guidelines-section {
+        padding: 80px 0;
+    }
 
+    .value-box {
+        margin-bottom: 30px;
+    }
+
+    .branding-logo {
+        min-height: 380px;
     }
 
     .palette-title h2 {
+        font-size: 3.5rem;
+    }
 
-        font-size: 4rem;
-
+    .color-card {
+        min-height: 220px;
     }
 
     .type-big {
-
-        font-size: 7rem;
-
+        font-size: 6rem;
     }
 
-    .products-title {
-
-        font-size: 4.8rem;
-
+    .secondary-type {
+        padding-left: 0;
     }
 
-    .applications-title {
+    .product-photo {
+        height: 250px;
+    }
 
-        font-size: 4.8rem;
+    .application {
+        min-height: 300px;
+    }
 
+    .pack-box {
+        width: 160px;
+        height: 210px;
+        box-shadow: 14px 14px 0 var(--red);
+    }
+
+    .pack-box div {
+        font-size: 1.8rem;
+    }
+
+    .cup-brand {
+        font-size: 4rem;
     }
 
     .poster {
-
-        padding: 35px;
-
+        padding: 35px 30px;
     }
 
     .poster h3 {
-
-        font-size: 3rem;
-
+        font-size: 2.8rem;
     }
 
+    .guideline {
+        min-height: auto;
+        padding: 30px 25px;
+        margin-bottom: 20px;
+    }
+
+    .guideline h3 {
+        font-size: 2.2rem;
+    }
+
+    .final-content h2 {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 575px) {
+    .hero-title {
+        font-size: 4rem;
+    }
+
+    .hero-photo {
+        min-height: 380px;
+    }
+
+    .hero-round {
+        width: 100px;
+        height: 100px;
+        font-size: 0.85rem;
+        right: 15px;
+        bottom: 15px;
+        box-shadow: 8px 8px 0 var(--red);
+    }
+
+    .hero-content {
+        padding: 80px 20px 40px;
+    }
+
+    .statement-title {
+        font-size: 3.5rem;
+    }
+
+    .massive-title {
+        font-size: 4rem;
+    }
+
+    .branding-info h3 {
+        font-size: 2.2rem;
+    }
+
+    .palette-title h2 {
+        font-size: 3rem;
+    }
+
+    .products-title {
+        font-size: 4rem;
+    }
+
+    .applications-title {
+        font-size: 4rem;
+    }
+
+    .photo-banner {
+        min-height: 450px;
+    }
+
+    .photo-banner-content h2 {
+        font-size: 4rem;
+    }
+
+    .logo-big {
+        font-size: 5rem;
+    }
+
+    .type-big {
+        font-size: 5rem;
+    }
+
+    .poster h3 {
+        font-size: 2.2rem;
+    }
+
+    .final-content > span {
+        font-size: 2rem;
+    }
+
+    .final-content h2 {
+        font-size: 3.5rem;
+    }
+
+    .footer-logo {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    footer .text-md-center,
+    footer .text-md-end {
+        text-align: center !important;
+        margin-top: 8px;
+    }
+}
+
+/* =====================================================
+   UTILIDADES ADICIONALES
+===================================================== */
+
+/* Smooth transitions para todos los elementos interactivos */
+a,
+button,
+.nav-link,
+.navbar-brand,
+.product-card,
+.application,
+.guideline,
+.value-box,
+.color-card {
+    transition: var(--transition);
+}
+
+/* Mejora de accesibilidad */
+:focus-visible {
+    outline: 2px solid var(--yellow);
+    outline-offset: 3px;
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--black);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--yellow);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--yellow-dark);
 }

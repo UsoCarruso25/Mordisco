@@ -1537,3 +1537,156 @@ button,
 ::-webkit-scrollbar-thumb:hover {
     background: var(--yellow-dark);
 }
+
+/* =====================================================
+   REGISTRO / CLUB MORDISCO
+===================================================== */
+
+.register-section {
+    padding: 120px 0;
+    background: var(--black);
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.register-section::before {
+    content: "";
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255, 198, 41, 0.08), transparent 70%);
+    pointer-events: none;
+}
+
+.register-title {
+    font-family: var(--font-primary);
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    line-height: 0.85;
+    letter-spacing: 1px;
+}
+
+.register-title span {
+    color: var(--yellow);
+}
+
+.register-copy {
+    max-width: 480px;
+    margin-top: 30px;
+    color: var(--gray-400);
+    font-size: 0.85rem;
+    line-height: 1.9;
+}
+
+.register-copy strong {
+    color: var(--yellow);
+    font-weight: 700;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 480px;
+    margin-left: auto;
+}
+
+.register-form label {
+    font-size: 0.55rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--yellow);
+    margin-bottom: 4px;
+}
+
+.register-form input {
+    width: 100%;
+    padding: 20px 22px;
+    background: var(--black-light);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    color: var(--white);
+    font-family: var(--font-secondary);
+    font-size: 0.9rem;
+    font-weight: 500;
+    outline: none;
+    transition: var(--transition);
+}
+
+.register-form input::placeholder {
+    color: var(--gray-500);
+}
+
+.register-form input:focus {
+    border-color: var(--yellow);
+    background: rgba(255, 198, 41, 0.04);
+    box-shadow: 0 0 0 3px rgba(255, 198, 41, 0.1);
+}
+
+.register-form button {
+    padding: 20px 28px;
+    background: var(--yellow);
+    color: var(--black);
+    border: none;
+    border-radius: 8px;
+    font-family: var(--font-secondary);
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.register-form button:hover:not(:disabled) {
+    background: var(--red);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(230, 57, 70, 0.3);
+}
+
+.register-form button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.form-mensaje {
+    min-height: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+.form-mensaje.ok {
+    color: #4ade80;
+}
+
+.form-mensaje.error {
+    color: var(--red);
+}
+
+.form-legal {
+    font-size: 0.6rem;
+    color: var(--gray-500);
+    letter-spacing: 1px;
+    line-height: 1.6;
+    margin-top: 4px;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .register-form {
+        margin-left: 0;
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 575px) {
+    .register-section {
+        padding: 80px 0;
+    }
+}

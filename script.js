@@ -194,8 +194,8 @@ document.addEventListener("DOMContentLoaded", () => {
             formMensaje.className = "form-mensaje";
 
             emailjs.send(
-                "TU_SERVICE_ID",     // ← Service ID
-                "TU_TEMPLATE_ID",    // ← Template ID
+                "service_m4xsidp",     // ← Service ID
+                "template_966mk2o",    // ← Template ID
                 {
                     user_email: email,
                     to_email:   email,

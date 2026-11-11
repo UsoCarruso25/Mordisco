@@ -1,0 +1,19 @@
+# MORDISCO
+
+> MORDISCO es una marca de comida rápida con personalidad urbana, directa y atrevida. Ofrece hamburguesas, papas, alitas y refrescos. Lema: "El antojo empieza aquí."
+
+## Productos
+- La Clásica: la hamburguesa original que representa la esencia de la marca.
+- Papas: crujientes, doradas y listas para compartir.
+- Alitas: de sabor intenso para los verdaderos antojos.
+- Refresco: el complemento perfecto para cualquier mordisco.
+
+## Club MORDISCO
+Quien se une al club recibe 20% de descuento y papas gratis en su primera orden, además de promos secretas y lanzamientos anticipados.
+
+## Identidad de marca
+- Colores: Mordisco Yellow #FFC629, Mordisco Red #E63946, Mordisco Black #101010.
+- Tipografías: Bebas Neue (principal) y Montserrat (secundaria).
+
+## Enlaces
+- [Página principal](https://mordisco2026.netlify.app/)

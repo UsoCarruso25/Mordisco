@@ -4,156 +4,169 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>MORDISCO | Brand Identity</title>
+    <title>MORDISCO | Comida rápida urbana: hamburguesas, papas y alitas</title>
+    <meta name="description" content="MORDISCO es comida rápida con sabor sin excusas: hamburguesas, papas, alitas y refrescos. Únete al club y recibe 20% off + papas gratis en tu primera orden.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://mordisco2026.netlify.app/">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23101010'/><text x='50' y='72' font-size='70' text-anchor='middle' fill='%23FFC629' font-family='Arial' font-weight='bold'>M</text></svg>">
+    <meta name="theme-color" content="#0a0a0a">
 
-    <!-- Bootstrap -->
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    >
+    <!-- Open Graph / Redes sociales -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MORDISCO">
+    <meta property="og:locale" content="es_CO">
+    <meta property="og:title" content="MORDISCO | Comida rápida con actitud">
+    <meta property="og:description" content="El antojo empieza aquí. Hamburguesas, papas y alitas. Únete al club y recibe 20% off + papas gratis.">
+    <meta property="og:url" content="https://mordisco2026.netlify.app/">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1200&q=70">
+    <meta property="og:image:alt" content="Hamburguesa clásica de MORDISCO">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MORDISCO | Comida rápida con actitud">
+    <meta name="twitter:description" content="El antojo empieza aquí. Hamburguesas, papas y alitas. Únete al club y recibe 20% off + papas gratis.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1200&q=70">
 
-    <!-- Google Fonts -->
+    <!-- Datos estructurados -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Restaurant",
+          "@id": "https://mordisco2026.netlify.app/#marca",
+          "name": "MORDISCO",
+          "description": "Marca de comida rápida con personalidad urbana: hamburguesas, papas, alitas y refrescos.",
+          "url": "https://mordisco2026.netlify.app/",
+          "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1200&q=70",
+          "servesCuisine": ["Comida rápida", "Hamburguesas", "Alitas"],
+          "slogan": "El antojo empieza aquí."
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿Qué es MORDISCO?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "MORDISCO es una marca de comida rápida con personalidad urbana que ofrece hamburguesas, papas, alitas y refrescos."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Qué productos tiene MORDISCO?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "El menú incluye La Clásica, papas crujientes, alitas de sabor intenso y refrescos."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cómo funciona el Club MORDISCO?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Dejas tu correo y recibes 20% de descuento y papas gratis en tu primera orden, además de promos y lanzamientos anticipados."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- Precarga de la imagen principal -->
+    <link rel="preload" as="image" fetchpriority="high"
+        href="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=70">
+
+    <!-- Fuentes (sin bloquear el render) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;700;800&display=swap"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;700;800&display=swap">
+    </noscript>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
+    <!-- Bootstrap (sin bloquear el render) -->
+    <link rel="preload" as="style"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    </noscript>
 
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<!-- =====================================================
-     LOADER
-===================================================== -->
-
-<div class="loader">
-    <div class="loader-brand">
-        MORDISCO<span>.</span>
-    </div>
+<!-- LOADER -->
+<div class="loader" aria-hidden="true">
+    <div class="loader-brand">MORDISCO<span>.</span></div>
 </div>
 
-
-<!-- =====================================================
-     NAVBAR
-===================================================== -->
-
-<nav class="navbar navbar-expand-lg navbar-mordisco">
-
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-mordisco" aria-label="Navegación principal">
     <div class="container-fluid px-lg-5">
 
-        <a class="navbar-brand" href="#inicio">
-            MORDISCO<span>.</span>
-        </a>
+        <a class="navbar-brand" href="#inicio">MORDISCO<span>.</span></a>
 
-        <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#mainMenu"
-        >
+        <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse" data-bs-target="#mainMenu"
+            aria-controls="mainMenu" aria-expanded="false" aria-label="Abrir menú">
             <span></span>
             <span></span>
         </button>
 
         <div class="collapse navbar-collapse" id="mainMenu">
-
             <ul class="navbar-nav ms-auto align-items-lg-center">
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#marca">
-                        Marca
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#branding">
-                        Branding
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#productos">
-                        Productos
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#aplicaciones">
-                        Aplicaciones
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#registro">
-                        Únete
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-button" href="#registro">
-                        MORDISCO →
-                    </a>
-                </li>
-
+                <li class="nav-item"><a class="nav-link" href="#marca">Marca</a></li>
+                <li class="nav-item"><a class="nav-link" href="#branding">Branding</a></li>
+                <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#aplicaciones">Aplicaciones</a></li>
+                <li class="nav-item"><a class="nav-link" href="#registro">Únete</a></li>
+                <li class="nav-item"><a class="nav-button" href="#registro">MORDISCO →</a></li>
             </ul>
-
         </div>
 
     </div>
-
 </nav>
 
+<main id="contenido">
 
-<!-- =====================================================
-     HERO
-===================================================== -->
-
+<!-- HERO -->
 <section id="inicio" class="hero">
-
     <div class="container-fluid">
-
         <div class="row g-0">
 
             <div class="col-lg-6 hero-content">
 
-                <div class="eyebrow reveal">
-                    BRAND IDENTITY · 2026
-                </div>
+                <div class="eyebrow">COMIDA RÁPIDA · BRAND IDENTITY · 2026</div>
 
-                <h1 class="hero-title reveal delay-1">
+                <h1 class="hero-title">
                     EL ANTOJO
                     <br>
                     <span>EMPIEZA</span>
                     <br>
                     AQUÍ.
+                    <span class="visually-hidden">MORDISCO, comida rápida con hamburguesas, papas y alitas</span>
                 </h1>
 
-                <p class="hero-copy reveal delay-2">
-
-                    Una identidad creada alrededor del sabor,
-                    la actitud y una experiencia gastronómica
-                    que se reconoce desde el primer vistazo.
-
+                <p class="hero-copy">
+                    MORDISCO es comida rápida con hamburguesas, papas y alitas.
+                    Una identidad creada alrededor del sabor, la actitud y una
+                    experiencia gastronómica que se reconoce desde el primer vistazo.
                 </p>
 
-                <a href="#marca" class="main-button reveal delay-3">
+                <a href="#marca" class="main-button">
                     EXPLORAR LA MARCA
                     <span>↓</span>
                 </a>
 
             </div>
 
-
-            <div class="col-lg-6 hero-photo">
-
-                <div class="photo-label">
-                    MORDISCO / 01
-                </div>
-
+            <div class="col-lg-6 hero-photo" role="img" aria-label="Hamburguesa clásica de MORDISCO">
+                <div class="photo-label">MORDISCO / 01</div>
                 <div class="hero-round">
                     SABOR
                     <br>
@@ -161,839 +174,385 @@
                     <br>
                     EXCUSAS.
                 </div>
-
             </div>
 
         </div>
-
     </div>
-
 </section>
 
-
-<!-- =====================================================
-     STATEMENT
-===================================================== -->
-
+<!-- STATEMENT -->
 <section class="statement">
-
     <div class="container">
-
         <div class="row">
-
             <div class="col-lg-11">
-
                 <p class="statement-title reveal">
-
                     NO ES SOLO COMIDA.
-                    <span>
-                        ES UN MORDISCO.
-                    </span>
-
+                    <span>ES UN MORDISCO.</span>
                 </p>
-
             </div>
-
         </div>
-
     </div>
-
 </section>
 
-
-<!-- =====================================================
-     LA MARCA
-===================================================== -->
-
+<!-- LA MARCA -->
 <section id="marca" class="brand-section">
-
     <div class="container">
 
         <div class="section-header reveal">
-
-            <span>
-                01 / LA MARCA
-            </span>
-
-            <small>
-                BRAND CONCEPT
-            </small>
-
+            <span>01 / LA MARCA</span>
+            <small>BRAND CONCEPT</small>
         </div>
-
 
         <div class="row align-items-end">
-
             <div class="col-lg-8">
-
                 <h2 class="massive-title reveal">
-
                     UNA MARCA
                     <br>
-
                     <span>CON HAMBRE.</span>
-
                 </h2>
-
             </div>
-
-
             <div class="col-lg-4">
-
                 <p class="body-text reveal">
-
-                    MORDISCO es una marca de comida rápida
-                    con una personalidad urbana, directa
-                    y atrevida.
-
+                    MORDISCO es una marca de comida rápida con una personalidad urbana,
+                    directa y atrevida.
                     <br><br>
-
-                    Su identidad combina una estética
-                    contemporánea con códigos visuales
+                    Su identidad combina una estética contemporánea con códigos visuales
                     relacionados con el mundo gastronómico.
-
                 </p>
-
             </div>
-
         </div>
-
-
-        <!-- VALORES -->
 
         <div class="row values-row">
 
             <div class="col-md-4 reveal">
-
                 <div class="value-box">
-
                     <span>01</span>
-
-                    <h3>
-                        ATREVIDA
-                    </h3>
-
-                    <p>
-                        Una personalidad que busca destacar
-                        y llamar la atención.
-                    </p>
-
+                    <h3>ATREVIDA</h3>
+                    <p>Una personalidad que busca destacar y llamar la atención.</p>
                 </div>
-
             </div>
 
-
             <div class="col-md-4 reveal">
-
                 <div class="value-box">
-
                     <span>02</span>
-
-                    <h3>
-                        DIRECTA
-                    </h3>
-
-                    <p>
-                        Mensajes simples, lenguaje cercano
-                        y una comunicación sin rodeos.
-                    </p>
-
+                    <h3>DIRECTA</h3>
+                    <p>Mensajes simples, lenguaje cercano y una comunicación sin rodeos.</p>
                 </div>
-
             </div>
 
-
             <div class="col-md-4 reveal">
-
                 <div class="value-box">
-
                     <span>03</span>
-
-                    <h3>
-                        SABROSA
-                    </h3>
-
-                    <p>
-                        Cada elemento debe despertar
-                        el deseo de probar.
-                    </p>
-
+                    <h3>SABROSA</h3>
+                    <p>Cada elemento debe despertar el deseo de probar.</p>
                 </div>
-
             </div>
 
         </div>
 
     </div>
-
 </section>
 
-
-<!-- =====================================================
-     BRANDING
-===================================================== -->
-
+<!-- BRANDING -->
 <section id="branding" class="branding-section">
-
     <div class="container">
 
         <div class="section-header dark reveal">
-
-            <span>
-                02 / BRANDING
-            </span>
-
-            <small>
-                VISUAL IDENTITY SYSTEM
-            </small>
-
+            <span>02 / BRANDING</span>
+            <small>VISUAL IDENTITY SYSTEM</small>
         </div>
 
+        <h2 class="visually-hidden">Identidad visual de MORDISCO: logotipo, colores y tipografía</h2>
 
         <div class="row g-0 branding-grid">
 
-
-            <!-- LOGOTIPO -->
-
             <div class="col-lg-8">
-
                 <div class="branding-logo">
-
-                    <div class="logo-small">
-                        BRAND LOGO
-                    </div>
-
-                    <div class="logo-big">
-                        MORDISCO<span>.</span>
-                    </div>
-
+                    <div class="logo-small">BRAND LOGO</div>
+                    <div class="logo-big">MORDISCO<span>.</span></div>
                     <div class="logo-line"></div>
-
-                    <p>
-                        EL ANTOJO EMPIEZA AQUÍ.
-                    </p>
-
+                    <p>EL ANTOJO EMPIEZA AQUÍ.</p>
                 </div>
-
             </div>
 
-
-            <!-- INFO -->
-
             <div class="col-lg-4">
-
                 <div class="branding-info">
-
-                    <span>
-                        LOGOTIPO
-                    </span>
-
+                    <span>LOGOTIPO</span>
                     <h3>
                         UNA MARCA
                         <br>
                         <strong>FÁCIL DE RECORDAR.</strong>
                     </h3>
-
                     <p>
-
-                        El logotipo utiliza una tipografía
-                        contundente para transmitir fuerza,
-                        energía y personalidad.
-
+                        El logotipo utiliza una tipografía contundente para transmitir
+                        fuerza, energía y personalidad.
                     </p>
-
                     <p>
-
-                        El punto amarillo funciona como
-                        elemento distintivo de la marca.
-
+                        El punto amarillo funciona como elemento distintivo de la marca.
                     </p>
-
                 </div>
-
             </div>
-
 
         </div>
 
-
         <!-- PALETA -->
-
         <div class="palette-title reveal">
-
-            <span>
-                COLOR SYSTEM
-            </span>
-
+            <span>COLOR SYSTEM</span>
             <h2>
                 UNA PALETA
                 <br>
                 <strong>CON SABOR.</strong>
             </h2>
-
         </div>
-
 
         <div class="row g-2 palette">
 
             <div class="col-lg-6 reveal">
-
                 <div class="color-card color-yellow">
-
                     <span>01</span>
-
                     <div>
-
-                        <h3>
-                            MORDISCO YELLOW
-                        </h3>
-
-                        <strong>
-                            #FFC629
-                        </strong>
-
+                        <h3>MORDISCO YELLOW</h3>
+                        <strong>#FFC629</strong>
                     </div>
-
                 </div>
-
             </div>
 
-
             <div class="col-lg-3 reveal">
-
                 <div class="color-card color-red">
-
                     <span>02</span>
-
                     <div>
-
-                        <h3>
-                            MORDISCO RED
-                        </h3>
-
-                        <strong>
-                            #E63946
-                        </strong>
-
+                        <h3>MORDISCO RED</h3>
+                        <strong>#E63946</strong>
                     </div>
-
                 </div>
-
             </div>
 
-
             <div class="col-lg-3 reveal">
-
                 <div class="color-card color-black">
-
                     <span>03</span>
-
                     <div>
-
-                        <h3>
-                            MORDISCO BLACK
-                        </h3>
-
-                        <strong>
-                            #101010
-                        </strong>
-
+                        <h3>MORDISCO BLACK</h3>
+                        <strong>#101010</strong>
                     </div>
-
                 </div>
-
             </div>
 
         </div>
 
-
         <!-- TIPOGRAFÍA -->
-
         <div class="typography-brand">
-
             <div class="row align-items-end">
 
                 <div class="col-lg-8">
-
-                    <span class="mini-label">
-                        TYPOGRAPHY / PRIMARY
-                    </span>
-
-                    <div class="type-big">
-                        MORDISCO
-                    </div>
-
-                    <p class="type-font">
-                        BEBAS NEUE
-                    </p>
-
+                    <span class="mini-label">TYPOGRAPHY / PRIMARY</span>
+                    <div class="type-big">MORDISCO</div>
+                    <p class="type-font">BEBAS NEUE</p>
                 </div>
 
-
                 <div class="col-lg-4">
-
                     <div class="secondary-type">
-
-                        <span>
-                            TYPOGRAPHY / SECONDARY
-                        </span>
-
-                        <h3>
-                            MONTSERRAT
-                        </h3>
-
-                        <p>
-                            Utilizada para textos,
-                            navegación, información
-                            y comunicación general.
-                        </p>
-
+                        <span>TYPOGRAPHY / SECONDARY</span>
+                        <h3>MONTSERRAT</h3>
+                        <p>Utilizada para textos, navegación, información y comunicación general.</p>
                     </div>
-
                 </div>
 
             </div>
-
         </div>
 
     </div>
-
 </section>
 
-
-<!-- =====================================================
-     PRODUCTOS
-===================================================== -->
-
+<!-- PRODUCTOS -->
 <section id="productos" class="products-section">
-
     <div class="container">
 
         <div class="section-header light reveal">
-
-            <span>
-                03 / PRODUCTOS
-            </span>
-
-            <small>
-                FOOD EXPERIENCE
-            </small>
-
+            <span>03 / PRODUCTOS</span>
+            <small>FOOD EXPERIENCE</small>
         </div>
 
-
         <div class="row align-items-end product-intro">
-
             <div class="col-lg-8">
-
                 <h2 class="products-title reveal">
-
                     EL SABOR
                     <br>
                     <span>HABLA SOLO.</span>
-
                 </h2>
-
             </div>
-
             <div class="col-lg-4">
-
                 <p class="product-copy reveal">
-
-                    Una selección visual que representa
-                    la personalidad gastronómica de
-                    MORDISCO.
-
+                    Una selección visual que representa la personalidad gastronómica
+                    de MORDISCO: hamburguesas, papas, alitas y refrescos.
                 </p>
-
             </div>
-
         </div>
-
 
         <div class="row g-3">
 
-
-            <!-- BURGER -->
-
             <div class="col-md-6 col-lg-3 reveal">
-
                 <article class="product-card">
-
-                    <div
-                        class="product-photo burger-photo"
-                    >
-
-                        <span>
-                            01
-                        </span>
-
+                    <div class="product-photo burger-photo" role="img" aria-label="Hamburguesa La Clásica de MORDISCO">
+                        <span>01</span>
                     </div>
-
                     <div class="product-content">
-
-                        <small>
-                            MORDISCO ORIGINAL
-                        </small>
-
-                        <h3>
-                            LA CLÁSICA
-                        </h3>
-
-                        <p>
-                            El sabor que representa
-                            la esencia de la marca.
-                        </p>
-
+                        <small>MORDISCO ORIGINAL</small>
+                        <h3>LA CLÁSICA</h3>
+                        <p>El sabor que representa la esencia de la marca.</p>
                     </div>
-
                 </article>
-
             </div>
 
-
-            <!-- PAPAS -->
-
             <div class="col-md-6 col-lg-3 reveal">
-
                 <article class="product-card">
-
-                    <div
-                        class="product-photo fries-photo"
-                    >
-
-                        <span>
-                            02
-                        </span>
-
+                    <div class="product-photo fries-photo" role="img" aria-label="Papas fritas crujientes y doradas">
+                        <span>02</span>
                     </div>
-
                     <div class="product-content">
-
-                        <small>
-                            SIDE
-                        </small>
-
-                        <h3>
-                            PAPAS
-                        </h3>
-
-                        <p>
-                            Crujientes, doradas
-                            y listas para compartir.
-                        </p>
-
+                        <small>SIDE</small>
+                        <h3>PAPAS</h3>
+                        <p>Crujientes, doradas y listas para compartir.</p>
                     </div>
-
                 </article>
-
             </div>
 
-
-            <!-- ALITAS -->
-
             <div class="col-md-6 col-lg-3 reveal">
-
                 <article class="product-card">
-
-                    <div
-                        class="product-photo wings-photo"
-                    >
-
-                        <span>
-                            03
-                        </span>
-
+                    <div class="product-photo wings-photo" role="img" aria-label="Alitas de pollo de sabor intenso">
+                        <span>03</span>
                     </div>
-
                     <div class="product-content">
-
-                        <small>
-                            SPECIAL
-                        </small>
-
-                        <h3>
-                            ALITAS
-                        </h3>
-
-                        <p>
-                            Sabor intenso para
-                            los verdaderos antojos.
-                        </p>
-
+                        <small>SPECIAL</small>
+                        <h3>ALITAS</h3>
+                        <p>Sabor intenso para los verdaderos antojos.</p>
                     </div>
-
                 </article>
-
             </div>
 
-
-            <!-- BEBIDA -->
-
             <div class="col-md-6 col-lg-3 reveal">
-
                 <article class="product-card">
-
-                    <div
-                        class="product-photo drink-photo"
-                    >
-
-                        <span>
-                            04
-                        </span>
-
+                    <div class="product-photo drink-photo" role="img" aria-label="Refresco para acompañar la comida">
+                        <span>04</span>
                     </div>
-
                     <div class="product-content">
-
-                        <small>
-                            DRINK
-                        </small>
-
-                        <h3>
-                            REFRESCO
-                        </h3>
-
-                        <p>
-                            El complemento perfecto
-                            para cualquier mordisco.
-                        </p>
-
+                        <small>DRINK</small>
+                        <h3>REFRESCO</h3>
+                        <p>El complemento perfecto para cualquier mordisco.</p>
                     </div>
-
                 </article>
-
             </div>
 
         </div>
 
     </div>
-
 </section>
 
-
-<!-- =====================================================
-     FOTOGRAFÍA
-===================================================== -->
-
+<!-- FOTOGRAFÍA -->
 <section class="photography-section">
-
     <div class="container-fluid p-0">
-
-        <div class="photo-banner reveal">
-
+        <div class="photo-banner reveal" role="img" aria-label="Fotografía de comida rápida con alto contraste">
             <div class="photo-banner-content">
-
-                <span>
-                    04 / PHOTOGRAPHY
-                </span>
-
+                <span>04 / PHOTOGRAPHY</span>
                 <h2>
                     EL SABOR
                     <br>
                     <strong>SE VE.</strong>
                 </h2>
-
-                <p>
-                    Fotografía directa, apetecible
-                    y con alto contraste.
-                </p>
-
+                <p>Fotografía directa, apetecible y con alto contraste.</p>
             </div>
-
         </div>
-
     </div>
-
 </section>
 
-
-<!-- =====================================================
-     APLICACIONES
-===================================================== -->
-
+<!-- APLICACIONES -->
 <section id="aplicaciones" class="applications-section">
-
     <div class="container">
 
         <div class="section-header reveal">
-
-            <span>
-                05 / APLICACIONES
-            </span>
-
-            <small>
-                BRAND IN ACTION
-            </small>
-
+            <span>05 / APLICACIONES</span>
+            <small>BRAND IN ACTION</small>
         </div>
 
-
         <h2 class="applications-title reveal">
-
             LA IDENTIDAD
             <br>
             <span>EN ACCIÓN.</span>
-
         </h2>
-
 
         <div class="row g-3">
 
-
-            <!-- PACKAGING -->
-
             <div class="col-lg-6 reveal">
-
                 <div class="application packaging">
-
                     <div class="pack-box">
-
-                        <div>
-                            MORDISCO<span>.</span>
-                        </div>
-
-                        <small>
-                            BURGER CLUB
-                        </small>
-
+                        <div>MORDISCO<span>.</span></div>
+                        <small>BURGER CLUB</small>
                     </div>
-
-                    <label>
-                        PACKAGING
-                    </label>
-
+                    <label>PACKAGING</label>
                 </div>
-
             </div>
-
-
-            <!-- CUP -->
 
             <div class="col-lg-6 reveal">
-
                 <div class="application cup">
-
-                    <div class="cup-brand">
-                        MORDISCO<span>.</span>
-                    </div>
-
-                    <label>
-                        BEBIDAS
-                    </label>
-
+                    <div class="cup-brand">MORDISCO<span>.</span></div>
+                    <label>BEBIDAS</label>
                 </div>
-
             </div>
-
-
-            <!-- REDES -->
 
             <div class="col-lg-4 reveal">
-
                 <div class="application social">
-
-                    <div>
-                        @MORDISCO.CO
-                    </div>
-
-                    <label>
-                        SOCIAL MEDIA
-                    </label>
-
+                    <div>@MORDISCO.CO</div>
+                    <label>SOCIAL MEDIA</label>
                 </div>
-
             </div>
 
-
-            <!-- POSTER -->
-
             <div class="col-lg-8 reveal">
-
                 <div class="application poster">
-
                     <div>
-
-                        <small>
-                            HOY ES BUEN DÍA
-                        </small>
-
+                        <small>HOY ES BUEN DÍA</small>
                         <h3>
                             PARA UN
                             <br>
                             MORDISCO.
                         </h3>
-
                     </div>
-
-                    <label>
-                        ADVERTISING
-                    </label>
-
+                    <label>ADVERTISING</label>
                 </div>
-
             </div>
 
         </div>
 
     </div>
-
 </section>
 
-
-<!-- =====================================================
-     REGISTRO / CLUB MORDISCO
-===================================================== -->
-
+<!-- REGISTRO / CLUB MORDISCO -->
 <section id="registro" class="register-section">
-
     <div class="container">
 
         <div class="section-header dark reveal">
-
-            <span>
-                06 / ÚNETE AL CLUB
-            </span>
-
-            <small>
-                MORDISCO INSIDERS
-            </small>
-
+            <span>06 / ÚNETE AL CLUB</span>
+            <small>MORDISCO INSIDERS</small>
         </div>
-
 
         <div class="row align-items-center">
 
             <div class="col-lg-6">
-
                 <h2 class="register-title reveal">
-
                     EL ANTOJO
                     <br>
                     <span>EMPIEZA AQUÍ.</span>
-
                 </h2>
-
                 <p class="register-copy reveal">
-
                     Únete al club y recibe
                     <strong>20% OFF + papas gratis</strong>
-                    en tu primera orden. Promos secretas,
-                    lanzamientos anticipados y mordiscos
-                    que no publicamos en ningún otro lado.
-
+                    en tu primera orden. Promos secretas, lanzamientos anticipados
+                    y mordiscos que no publicamos en ningún otro lado.
                 </p>
-
             </div>
 
-
             <div class="col-lg-6">
-
                 <form id="formRegistro" class="register-form reveal" novalidate>
 
-                    <label for="email">
-                        Tu correo
-                    </label>
+                    <label for="email">Tu correo</label>
 
                     <input
                         type="email"
@@ -1004,146 +563,130 @@
                         autocomplete="email"
                     >
 
-                    <button type="submit" id="btnRegistro">
-                        DARME UN MORDISCO →
-                    </button>
+                    <button type="submit" id="btnRegistro">DARME UN MORDISCO →</button>
 
-                    <p id="formMensaje" class="form-mensaje"></p>
+                    <p id="formMensaje" class="form-mensaje" role="status" aria-live="polite"></p>
 
                     <small class="form-legal">
-                        Sin spam. Solo antojos.
-                        Puedes salirte cuando quieras.
+                        Sin spam. Solo antojos. Puedes salirte cuando quieras.
                     </small>
 
                 </form>
-
             </div>
 
         </div>
 
     </div>
-
 </section>
 
-
-<!-- =====================================================
-     BRAND GUIDELINES
-===================================================== -->
-
+<!-- BRAND GUIDELINES -->
 <section class="guidelines-section">
-
     <div class="container">
 
         <div class="section-header reveal">
-
-            <span>
-                07 / BRAND GUIDELINES
-            </span>
-
-            <small>
-                USAGE
-            </small>
-
+            <span>07 / BRAND GUIDELINES</span>
+            <small>USAGE</small>
         </div>
 
+        <h2 class="visually-hidden">Guía de uso de la marca MORDISCO</h2>
 
         <div class="row g-3">
 
             <div class="col-lg-6 reveal">
-
                 <div class="guideline correct">
-
-                    <span class="guideline-number">
-                        01
-                    </span>
-
-                    <h3>
-                        USOS CORRECTOS
-                    </h3>
-
+                    <span class="guideline-number">01</span>
+                    <h3>USOS CORRECTOS</h3>
                     <ul>
-
-                        <li>
-                            Mantener las proporciones.
-                        </li>
-
-                        <li>
-                            Utilizar la paleta oficial.
-                        </li>
-
-                        <li>
-                            Mantener suficiente espacio.
-                        </li>
-
-                        <li>
-                            Respetar la legibilidad.
-                        </li>
-
+                        <li>Mantener las proporciones.</li>
+                        <li>Utilizar la paleta oficial.</li>
+                        <li>Mantener suficiente espacio.</li>
+                        <li>Respetar la legibilidad.</li>
                     </ul>
-
                 </div>
-
             </div>
 
-
             <div class="col-lg-6 reveal">
-
                 <div class="guideline incorrect">
-
-                    <span class="guideline-number">
-                        02
-                    </span>
-
-                    <h3>
-                        USOS INCORRECTOS
-                    </h3>
-
+                    <span class="guideline-number">02</span>
+                    <h3>USOS INCORRECTOS</h3>
                     <ul>
-
-                        <li>
-                            No deformar el logotipo.
-                        </li>
-
-                        <li>
-                            No cambiar sus colores.
-                        </li>
-
-                        <li>
-                            No agregar efectos innecesarios.
-                        </li>
-
-                        <li>
-                            No utilizar fondos ilegibles.
-                        </li>
-
+                        <li>No deformar el logotipo.</li>
+                        <li>No cambiar sus colores.</li>
+                        <li>No agregar efectos innecesarios.</li>
+                        <li>No utilizar fondos ilegibles.</li>
                     </ul>
-
                 </div>
-
             </div>
 
         </div>
 
     </div>
-
 </section>
 
+<!-- PREGUNTAS FRECUENTES -->
+<section id="preguntas" class="brand-section faq">
+    <div class="container">
 
-<!-- =====================================================
-     FINAL
-===================================================== -->
+        <div class="section-header reveal">
+            <span>08 / PREGUNTAS</span>
+            <small>FAQ</small>
+        </div>
 
+        <h2 class="massive-title faq-title reveal">
+            PREGUNTAS
+            <br>
+            <span>FRECUENTES.</span>
+        </h2>
+
+        <div class="row g-4 mt-4">
+
+            <div class="col-md-6 reveal">
+                <h3>¿Qué es MORDISCO?</h3>
+                <p class="body-text">
+                    MORDISCO es una marca de comida rápida con personalidad urbana que
+                    ofrece hamburguesas, papas, alitas y refrescos, pensada para quienes
+                    buscan sabor sin excusas.
+                </p>
+            </div>
+
+            <div class="col-md-6 reveal">
+                <h3>¿Qué productos tiene MORDISCO?</h3>
+                <p class="body-text">
+                    El menú incluye La Clásica, papas crujientes y doradas, alitas de
+                    sabor intenso y refrescos para acompañar cualquier antojo.
+                </p>
+            </div>
+
+            <div class="col-md-6 reveal">
+                <h3>¿Cómo funciona el Club MORDISCO?</h3>
+                <p class="body-text">
+                    Solo dejas tu correo y recibes 20% de descuento y papas gratis en tu
+                    primera orden, además de promos y lanzamientos anticipados.
+                </p>
+            </div>
+
+            <div class="col-md-6 reveal">
+                <h3>¿Dónde puedo seguir la marca?</h3>
+                <p class="body-text">
+                    Encuéntranos en redes como @mordisco.co para conocer promociones,
+                    novedades y nuevos sabores.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- FINAL -->
 <section id="contacto" class="final-section">
 
     <div class="final-photo"></div>
-
     <div class="final-overlay"></div>
 
     <div class="container final-content">
 
-        <span>
-            MORDISCO.
-        </span>
+        <span>MORDISCO.</span>
 
         <h2>
             EL ANTOJO
@@ -1151,69 +694,39 @@
             EMPIEZA AQUÍ.
         </h2>
 
-        <a href="#inicio">
-            VOLVER ARRIBA ↑
-        </a>
+        <a href="#inicio">VOLVER ARRIBA ↑</a>
 
     </div>
 
 </section>
 
+</main>
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
+<!-- FOOTER -->
 <footer>
-
     <div class="container">
-
         <div class="row align-items-center">
 
             <div class="col-md-4">
-
-                <div class="footer-logo">
-                    MORDISCO<span>.</span>
-                </div>
-
+                <div class="footer-logo">MORDISCO<span>.</span></div>
             </div>
 
             <div class="col-md-4 text-md-center">
-
-                <small>
-                    BRAND IDENTITY · 2026
-                </small>
-
+                <small>BRAND IDENTITY · 2026</small>
             </div>
 
             <div class="col-md-4 text-md-end">
-
-                <small>
-                    EL ANTOJO EMPIEZA AQUÍ.
-                </small>
-
+                <small>EL ANTOJO EMPIEZA AQUÍ.</small>
             </div>
 
         </div>
-
     </div>
-
 </footer>
 
-
-<!-- Bootstrap -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- EmailJS SDK -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-<script>
-  // Inicializar EmailJS con tu Public Key
-  emailjs.init({ publicKey: "6wJ1VhMMm2HW_uv8A" });
-</script>
-
-<!-- Script principal -->
-<script src="script.js"></script>
+<!-- Scripts (con defer: se ejecutan en este orden) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+<script src="script.js" defer></script>
 
 </body>
 </html>

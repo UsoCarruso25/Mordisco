@@ -1411,3 +1411,40 @@ a, button, .nav-link, .navbar-brand, .product-card, .application, .guideline, .v
     letter-spacing: 1px;
 }
 .faq-title { font-size: clamp(3rem, 7vw, 6rem); }
+
+/* =====================================================
+   RENDIMIENTO: reducir trabajo del navegador
+===================================================== */
+
+/* Desenfoque del navbar: muy costoso en móviles */
+.navbar-mordisco {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: rgba(10, 10, 10, 0.97);
+}
+
+/* Animación infinita del círculo: obliga a repintar sin parar */
+.hero-round { animation: none; }
+
+/* No renderizar las secciones largas hasta que estén cerca */
+.brand-section,
+.branding-section,
+.products-section,
+.photography-section,
+.applications-section,
+.register-section,
+.guidelines-section,
+.final-section,
+footer {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 900px;
+}
+
+/* Respetar a quien prefiere menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

@@ -60,9 +60,24 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    /* EMAILJS - FORMULARIO DE REGISTRO */
-    if (typeof emailjs !== "undefined") {
-        emailjs.init({ publicKey: "6wJ1VhMMm2HW_uv8A" });
+    /* EMAILJS - FORMULARIO DE REGISTRO (se carga al tocar el formulario) */
+    let emailjsListo = null;
+
+    function cargarEmailJS() {
+        if (emailjsListo) return emailjsListo;
+
+        emailjsListo = new Promise((resolve, reject) => {
+            const s = document.createElement("script");
+            s.src = "https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js";
+            s.onload = () => {
+                emailjs.init({ publicKey: "6wJ1VhMMm2HW_uv8A" });
+                resolve();
+            };
+            s.onerror = reject;
+            document.head.appendChild(s);
+        });
+
+        return emailjsListo;
     }
 
     const formRegistro = document.getElementById("formRegistro");
@@ -70,6 +85,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const formMensaje = document.getElementById("formMensaje");
 
     if (formRegistro && btnRegistro && formMensaje) {
+
+        formRegistro.addEventListener("focusin", cargarEmailJS, { once: true });
 
         formRegistro.addEventListener("submit", function (e) {
             e.preventDefault();
@@ -89,29 +106,30 @@ document.addEventListener("DOMContentLoaded", () => {
             formMensaje.textContent = "";
             formMensaje.className = "form-mensaje";
 
-            emailjs.send(
-                "service_m4xsidp",
-                "template_966mk2o",
-                {
-                    user_email: email,
-                    to_email: email,
-                    reply_to: email
-                }
-            )
-            .then(function () {
-                formMensaje.textContent = "🍔 ¡Bienvenido al club! Revisa tu correo.";
-                formMensaje.className = "form-mensaje ok";
-                formRegistro.reset();
-            })
-            .catch(function (error) {
-                console.error("EmailJS error:", error);
-                formMensaje.textContent = "No pudimos enviar el correo. Inténtalo de nuevo.";
-                formMensaje.className = "form-mensaje error";
-            })
-            .finally(function () {
-                btnRegistro.disabled = false;
-                btnRegistro.textContent = textoOriginal;
-            });
+            cargarEmailJS()
+                .then(() => emailjs.send(
+                    "service_m4xsidp",
+                    "template_966mk2o",
+                    {
+                        user_email: email,
+                        to_email: email,
+                        reply_to: email
+                    }
+                ))
+                .then(function () {
+                    formMensaje.textContent = "🍔 ¡Bienvenido al club! Revisa tu correo.";
+                    formMensaje.className = "form-mensaje ok";
+                    formRegistro.reset();
+                })
+                .catch(function (error) {
+                    console.error("EmailJS error:", error);
+                    formMensaje.textContent = "No pudimos enviar el correo. Inténtalo de nuevo.";
+                    formMensaje.className = "form-mensaje error";
+                })
+                .finally(function () {
+                    btnRegistro.disabled = false;
+                    btnRegistro.textContent = textoOriginal;
+                });
         });
 
     }
